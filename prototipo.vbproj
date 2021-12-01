@@ -114,6 +114,18 @@
     <Compile Include="Form4.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormCarrito.Designer.vb">
+      <DependentUpon>FormCarrito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCarrito.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generacion de Factura.Designer.vb">
+      <DependentUpon>Generacion de Factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Generacion de Factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio de sesion usuario.Designer.vb">
       <DependentUpon>Inicio de sesion usuario.vb</DependentUpon>
     </Compile>
@@ -177,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCarrito.resx">
+      <DependentUpon>FormCarrito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio de sesion usuario.resx">
+      <DependentUpon>Inicio de sesion usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.vb</DependentUpon>

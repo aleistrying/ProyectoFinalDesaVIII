@@ -42,7 +42,7 @@ Partial Class escoger_cafeteria
         '
         'btnenviarAinicioUsuario
         '
-        Me.btnenviarAinicioUsuario.Location = New System.Drawing.Point(186, 274)
+        Me.btnenviarAinicioUsuario.Location = New System.Drawing.Point(186, 276)
         Me.btnenviarAinicioUsuario.Name = "btnenviarAinicioUsuario"
         Me.btnenviarAinicioUsuario.Size = New System.Drawing.Size(126, 61)
         Me.btnenviarAinicioUsuario.TabIndex = 4
@@ -97,7 +97,7 @@ Partial Class escoger_cafeteria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(531, 496)
+        Me.ClientSize = New System.Drawing.Size(478, 496)
         Me.Controls.Add(Me.RadioButton4)
         Me.Controls.Add(Me.RadioButton3)
         Me.Controls.Add(Me.RadioButton2)
