@@ -193,6 +193,9 @@
     <EmbeddedResource Include="FormCarrito.resx">
       <DependentUpon>FormCarrito.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Generacion de Factura.resx">
+      <DependentUpon>Generacion de Factura.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio de sesion usuario.resx">
       <DependentUpon>Inicio de sesion usuario.vb</DependentUpon>
     </EmbeddedResource>
