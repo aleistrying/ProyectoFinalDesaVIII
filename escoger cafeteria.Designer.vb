@@ -22,82 +22,98 @@ Partial Class escoger_cafeteria
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.checkboxcafeteriaA = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.checkboxrecordareleccion = New System.Windows.Forms.CheckBox()
+        Me.btnenviarAinicioUsuario = New System.Windows.Forms.Button()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
-        'checkboxcafeteriaA
+        'checkboxrecordareleccion
         '
-        Me.checkboxcafeteriaA.AutoSize = True
-        Me.checkboxcafeteriaA.Location = New System.Drawing.Point(186, 141)
-        Me.checkboxcafeteriaA.Name = "checkboxcafeteriaA"
-        Me.checkboxcafeteriaA.Size = New System.Drawing.Size(105, 17)
-        Me.checkboxcafeteriaA.TabIndex = 0
-        Me.checkboxcafeteriaA.Text = "Cafeteria A (350)"
-        Me.checkboxcafeteriaA.UseVisualStyleBackColor = True
+        Me.checkboxrecordareleccion.AutoSize = True
+        Me.checkboxrecordareleccion.Location = New System.Drawing.Point(186, 236)
+        Me.checkboxrecordareleccion.Name = "checkboxrecordareleccion"
+        Me.checkboxrecordareleccion.Size = New System.Drawing.Size(126, 17)
+        Me.checkboxrecordareleccion.TabIndex = 1
+        Me.checkboxrecordareleccion.Text = "Recordar mi eleccion"
+        Me.checkboxrecordareleccion.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'btnenviarAinicioUsuario
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(186, 210)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(106, 17)
-        Me.CheckBox1.TabIndex = 1
-        Me.CheckBox1.Text = "Cafeteria D (100)"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.btnenviarAinicioUsuario.Location = New System.Drawing.Point(186, 274)
+        Me.btnenviarAinicioUsuario.Name = "btnenviarAinicioUsuario"
+        Me.btnenviarAinicioUsuario.Size = New System.Drawing.Size(126, 61)
+        Me.btnenviarAinicioUsuario.TabIndex = 4
+        Me.btnenviarAinicioUsuario.Text = "Aceptar"
+        Me.btnenviarAinicioUsuario.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'RadioButton1
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(186, 187)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(105, 17)
-        Me.CheckBox2.TabIndex = 2
-        Me.CheckBox2.Text = "Cafeteria C (100)"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(186, 91)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(104, 17)
+        Me.RadioButton1.TabIndex = 5
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Cafeteria A (350)"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'RadioButton2
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(186, 164)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(105, 17)
-        Me.CheckBox3.TabIndex = 3
-        Me.CheckBox3.Text = "Cafeteria B (250)"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(186, 114)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(104, 17)
+        Me.RadioButton2.TabIndex = 6
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Cafeteria B (250)"
+        Me.RadioButton2.UseVisualStyleBackColor = True
         '
-        'Button1
+        'RadioButton3
         '
-        Me.Button1.Location = New System.Drawing.Point(186, 272)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 61)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(186, 137)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(104, 17)
+        Me.RadioButton3.TabIndex = 7
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Cafeteria C (100)"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(186, 160)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(105, 17)
+        Me.RadioButton4.TabIndex = 8
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "Cafeteria D (100)"
+        Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'escoger_cafeteria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(531, 496)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.checkboxcafeteriaA)
+        Me.Controls.Add(Me.RadioButton4)
+        Me.Controls.Add(Me.RadioButton3)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
+        Me.Controls.Add(Me.btnenviarAinicioUsuario)
+        Me.Controls.Add(Me.checkboxrecordareleccion)
         Me.Name = "escoger_cafeteria"
         Me.Text = "escoger_cafeteria"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents checkboxcafeteriaA As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents checkboxrecordareleccion As CheckBox
+    Friend WithEvents btnenviarAinicioUsuario As Button
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton4 As RadioButton
 End Class
