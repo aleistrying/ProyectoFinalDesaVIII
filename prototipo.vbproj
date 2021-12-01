@@ -132,6 +132,12 @@
     <Compile Include="Generacion de Factura.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Historial de facturas.Designer.vb">
+      <DependentUpon>Historial de facturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial de facturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio de sesion usuario.Designer.vb">
       <DependentUpon>Inicio de sesion usuario.vb</DependentUpon>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Generacion de Factura.resx">
       <DependentUpon>Generacion de Factura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial de facturas.resx">
+      <DependentUpon>Historial de facturas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio de sesion usuario.resx">
       <DependentUpon>Inicio de sesion usuario.vb</DependentUpon>

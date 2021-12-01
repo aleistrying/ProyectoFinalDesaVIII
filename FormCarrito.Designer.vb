@@ -23,35 +23,26 @@ Partial Class FormCarrito
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.BtnPagar = New System.Windows.Forms.Button()
+        Me.Carritodecompras = New System.Windows.Forms.DataGridView()
         Me.nombre_plato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioPlato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionPlato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ImagenPlato = New System.Windows.Forms.DataGridViewImageColumn()
         Me.btneliminardelista = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.BtnPagar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.label_total_a_pagar = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Carritodecompras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'Carritodecompras
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombre_plato, Me.PrecioPlato, Me.DescripcionPlato, Me.ImagenPlato, Me.btneliminardelista})
-        Me.DataGridView1.Location = New System.Drawing.Point(125, 57)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(547, 212)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'BtnPagar
-        '
-        Me.BtnPagar.Location = New System.Drawing.Point(327, 353)
-        Me.BtnPagar.Name = "BtnPagar"
-        Me.BtnPagar.Size = New System.Drawing.Size(139, 49)
-        Me.BtnPagar.TabIndex = 1
-        Me.BtnPagar.Text = "Pagar"
-        Me.BtnPagar.UseVisualStyleBackColor = True
+        Me.Carritodecompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Carritodecompras.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombre_plato, Me.PrecioPlato, Me.DescripcionPlato, Me.ImagenPlato, Me.btneliminardelista})
+        Me.Carritodecompras.Location = New System.Drawing.Point(125, 57)
+        Me.Carritodecompras.Name = "Carritodecompras"
+        Me.Carritodecompras.Size = New System.Drawing.Size(547, 212)
+        Me.Carritodecompras.TabIndex = 0
         '
         'nombre_plato
         '
@@ -86,6 +77,15 @@ Partial Class FormCarrito
         Me.btneliminardelista.Name = "btneliminardelista"
         Me.btneliminardelista.Text = "Eliminar"
         '
+        'BtnPagar
+        '
+        Me.BtnPagar.Location = New System.Drawing.Point(327, 353)
+        Me.BtnPagar.Name = "BtnPagar"
+        Me.BtnPagar.Size = New System.Drawing.Size(139, 49)
+        Me.BtnPagar.TabIndex = 1
+        Me.BtnPagar.Text = "Pagar"
+        Me.BtnPagar.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -112,16 +112,16 @@ Partial Class FormCarrito
         Me.Controls.Add(Me.label_total_a_pagar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnPagar)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Carritodecompras)
         Me.Name = "FormCarrito"
         Me.Text = "FormCarrito"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Carritodecompras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Carritodecompras As DataGridView
     Friend WithEvents nombre_plato As DataGridViewTextBoxColumn
     Friend WithEvents PrecioPlato As DataGridViewTextBoxColumn
     Friend WithEvents DescripcionPlato As DataGridViewTextBoxColumn
