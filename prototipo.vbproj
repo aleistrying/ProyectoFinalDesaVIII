@@ -83,6 +83,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Añadir fondos.Designer.vb">
+      <DependentUpon>Añadir fondos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Añadir fondos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="escoger cafeteria.Designer.vb">
       <DependentUpon>escoger cafeteria.vb</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Añadir fondos.resx">
+      <DependentUpon>Añadir fondos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="escoger cafeteria.resx">
       <DependentUpon>escoger cafeteria.vb</DependentUpon>
     </EmbeddedResource>
