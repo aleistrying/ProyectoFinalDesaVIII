@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class pantallaOlvido
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class pantallaOlvido
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
@@ -33,7 +33,6 @@ Partial Class pantallaOlvido
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.lblError = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -77,7 +76,7 @@ Partial Class pantallaOlvido
         Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(323, 30)
-        Me.txtUsuario.TabIndex = 11
+        Me.txtUsuario.TabIndex = 1
         '
         'btnAcceptar
         '
@@ -90,6 +89,7 @@ Partial Class pantallaOlvido
         Me.btnAcceptar.Name = "btnAcceptar"
         Me.btnAcceptar.Size = New System.Drawing.Size(240, 82)
         Me.btnAcceptar.TabIndex = 9
+        Me.btnAcceptar.TabStop = False
         Me.btnAcceptar.Text = "Acceptar"
         Me.btnAcceptar.UseVisualStyleBackColor = False
         '
@@ -104,6 +104,7 @@ Partial Class pantallaOlvido
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(240, 82)
         Me.btnVolver.TabIndex = 16
+        Me.btnVolver.TabStop = False
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = False
         '
@@ -116,7 +117,7 @@ Partial Class pantallaOlvido
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(323, 30)
-        Me.txtPassword.TabIndex = 10
+        Me.txtPassword.TabIndex = 3
         '
         'TextBox1
         '
@@ -127,7 +128,8 @@ Partial Class pantallaOlvido
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox1.Size = New System.Drawing.Size(323, 30)
-        Me.TextBox1.TabIndex = 17
+        Me.TextBox1.TabIndex = 4
+        Me.TextBox1.TabStop = False
         '
         'Label2
         '
@@ -160,27 +162,13 @@ Partial Class pantallaOlvido
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(323, 30)
-        Me.TextBox2.TabIndex = 19
-        '
-        'lblError
-        '
-        Me.lblError.AutoSize = True
-        Me.lblError.BackColor = System.Drawing.Color.Transparent
-        Me.lblError.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
-        Me.lblError.ForeColor = System.Drawing.Color.IndianRed
-        Me.lblError.Location = New System.Drawing.Point(144, 432)
-        Me.lblError.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(130, 20)
-        Me.lblError.TabIndex = 21
-        Me.lblError.Text = "Mensaje de Error"
+        Me.TextBox2.TabIndex = 2
         '
         'pantallaOlvido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(427, 672)
-        Me.Controls.Add(Me.lblError)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label2)
@@ -211,5 +199,4 @@ Partial Class pantallaOlvido
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents lblError As Label
 End Class

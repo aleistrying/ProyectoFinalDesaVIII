@@ -83,7 +83,7 @@ Partial Class pantallaRegistro
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(323, 30)
-        Me.txtEmail.TabIndex = 11
+        Me.txtEmail.TabIndex = 3
         '
         'btnAcceptar
         '
@@ -96,6 +96,7 @@ Partial Class pantallaRegistro
         Me.btnAcceptar.Name = "btnAcceptar"
         Me.btnAcceptar.Size = New System.Drawing.Size(240, 82)
         Me.btnAcceptar.TabIndex = 9
+        Me.btnAcceptar.TabStop = False
         Me.btnAcceptar.Text = "Acceptar"
         Me.btnAcceptar.UseVisualStyleBackColor = False
         '
@@ -110,6 +111,7 @@ Partial Class pantallaRegistro
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(240, 82)
         Me.btnVolver.TabIndex = 16
+        Me.btnVolver.TabStop = False
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = False
         '
@@ -122,7 +124,7 @@ Partial Class pantallaRegistro
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(282, 30)
-        Me.txtPassword.TabIndex = 10
+        Me.txtPassword.TabIndex = 4
         '
         'txtPasswordConfirmar
         '
@@ -133,7 +135,8 @@ Partial Class pantallaRegistro
         Me.txtPasswordConfirmar.Name = "txtPasswordConfirmar"
         Me.txtPasswordConfirmar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPasswordConfirmar.Size = New System.Drawing.Size(282, 30)
-        Me.txtPasswordConfirmar.TabIndex = 17
+        Me.txtPasswordConfirmar.TabIndex = 5
+        Me.txtPasswordConfirmar.TabStop = False
         '
         'Label2
         '
@@ -166,7 +169,7 @@ Partial Class pantallaRegistro
         Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(323, 30)
-        Me.txtNombre.TabIndex = 19
+        Me.txtNombre.TabIndex = 1
         '
         'Label4
         '
@@ -188,7 +191,7 @@ Partial Class pantallaRegistro
         Me.txtApellido.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(323, 30)
-        Me.txtApellido.TabIndex = 21
+        Me.txtApellido.TabIndex = 2
         '
         'eyeIconPass
         '

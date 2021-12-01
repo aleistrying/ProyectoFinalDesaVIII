@@ -22,98 +22,141 @@ Partial Class escoger_cafeteria
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.checkboxrecordareleccion = New System.Windows.Forms.CheckBox()
-        Me.btnenviarAinicioUsuario = New System.Windows.Forms.Button()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.components = New System.ComponentModel.Container()
+        Me.ChkRecordarSeleccion = New System.Windows.Forms.CheckBox()
+        Me.BtnAcceptarCafeteria = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BtnSalir = New System.Windows.Forms.Button()
+        Me.DGVCafeterias = New System.Windows.Forms.DataGridView()
+        Me.cafeteriaCheckbox = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.textCafeterias = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PcafeteriaDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.P_cafeteriaDataSet1 = New prototipo.p_cafeteriaDataSet1()
+        CType(Me.DGVCafeterias, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PcafeteriaDataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P_cafeteriaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'checkboxrecordareleccion
+        'ChkRecordarSeleccion
         '
-        Me.checkboxrecordareleccion.AutoSize = True
-        Me.checkboxrecordareleccion.Location = New System.Drawing.Point(186, 236)
-        Me.checkboxrecordareleccion.Name = "checkboxrecordareleccion"
-        Me.checkboxrecordareleccion.Size = New System.Drawing.Size(126, 17)
-        Me.checkboxrecordareleccion.TabIndex = 1
-        Me.checkboxrecordareleccion.Text = "Recordar mi eleccion"
-        Me.checkboxrecordareleccion.UseVisualStyleBackColor = True
+        Me.ChkRecordarSeleccion.AutoSize = True
+        Me.ChkRecordarSeleccion.Location = New System.Drawing.Point(282, 363)
+        Me.ChkRecordarSeleccion.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ChkRecordarSeleccion.Name = "ChkRecordarSeleccion"
+        Me.ChkRecordarSeleccion.Size = New System.Drawing.Size(183, 24)
+        Me.ChkRecordarSeleccion.TabIndex = 5
+        Me.ChkRecordarSeleccion.TabStop = False
+        Me.ChkRecordarSeleccion.Text = "Recordar mi eleccion"
+        Me.ChkRecordarSeleccion.UseVisualStyleBackColor = True
         '
-        'btnenviarAinicioUsuario
+        'BtnAcceptarCafeteria
         '
-        Me.btnenviarAinicioUsuario.Location = New System.Drawing.Point(186, 276)
-        Me.btnenviarAinicioUsuario.Name = "btnenviarAinicioUsuario"
-        Me.btnenviarAinicioUsuario.Size = New System.Drawing.Size(126, 61)
-        Me.btnenviarAinicioUsuario.TabIndex = 4
-        Me.btnenviarAinicioUsuario.Text = "Aceptar"
-        Me.btnenviarAinicioUsuario.UseVisualStyleBackColor = True
+        Me.BtnAcceptarCafeteria.Location = New System.Drawing.Point(279, 425)
+        Me.BtnAcceptarCafeteria.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnAcceptarCafeteria.Name = "BtnAcceptarCafeteria"
+        Me.BtnAcceptarCafeteria.Size = New System.Drawing.Size(189, 94)
+        Me.BtnAcceptarCafeteria.TabIndex = 6
+        Me.BtnAcceptarCafeteria.TabStop = False
+        Me.BtnAcceptarCafeteria.Text = "Aceptar"
+        Me.BtnAcceptarCafeteria.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'Label1
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(186, 91)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(104, 17)
-        Me.RadioButton1.TabIndex = 5
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Cafeteria A (350)"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(140, 43)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(466, 37)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Selecciona la cafeteria a utilizar"
         '
-        'RadioButton2
+        'BtnSalir
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(186, 114)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(104, 17)
-        Me.RadioButton2.TabIndex = 6
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Cafeteria B (250)"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.BtnSalir.Location = New System.Drawing.Point(279, 545)
+        Me.BtnSalir.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnSalir.Name = "BtnSalir"
+        Me.BtnSalir.Size = New System.Drawing.Size(189, 94)
+        Me.BtnSalir.TabIndex = 7
+        Me.BtnSalir.TabStop = False
+        Me.BtnSalir.Text = "Salir"
+        Me.BtnSalir.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'DGVCafeterias
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(186, 137)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(104, 17)
-        Me.RadioButton3.TabIndex = 7
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Cafeteria C (100)"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.DGVCafeterias.AllowUserToAddRows = False
+        Me.DGVCafeterias.AllowUserToDeleteRows = False
+        Me.DGVCafeterias.AllowUserToResizeColumns = False
+        Me.DGVCafeterias.AllowUserToResizeRows = False
+        Me.DGVCafeterias.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.DGVCafeterias.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DGVCafeterias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.DGVCafeterias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DGVCafeterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVCafeterias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cafeteriaCheckbox, Me.textCafeterias})
+        Me.DGVCafeterias.Location = New System.Drawing.Point(230, 129)
+        Me.DGVCafeterias.MultiSelect = False
+        Me.DGVCafeterias.Name = "DGVCafeterias"
+        Me.DGVCafeterias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DGVCafeterias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        Me.DGVCafeterias.RowTemplate.Height = 16
+        Me.DGVCafeterias.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVCafeterias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.DGVCafeterias.Size = New System.Drawing.Size(286, 199)
+        Me.DGVCafeterias.TabIndex = 11
         '
-        'RadioButton4
+        'cafeteriaCheckbox
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(186, 160)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(105, 17)
-        Me.RadioButton4.TabIndex = 8
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Cafeteria D (100)"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.cafeteriaCheckbox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.cafeteriaCheckbox.HeaderText = "test"
+        Me.cafeteriaCheckbox.MinimumWidth = 8
+        Me.cafeteriaCheckbox.Name = "cafeteriaCheckbox"
+        Me.cafeteriaCheckbox.Width = 42
+        '
+        'textCafeterias
+        '
+        Me.textCafeterias.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.textCafeterias.HeaderText = "Cafeterias"
+        Me.textCafeterias.MinimumWidth = 8
+        Me.textCafeterias.Name = "textCafeterias"
+        Me.textCafeterias.ReadOnly = True
+        '
+        'PcafeteriaDataSet1BindingSource
+        '
+        Me.PcafeteriaDataSet1BindingSource.DataSource = Me.P_cafeteriaDataSet1
+        Me.PcafeteriaDataSet1BindingSource.Position = 0
+        '
+        'P_cafeteriaDataSet1
+        '
+        Me.P_cafeteriaDataSet1.DataSetName = "p_cafeteriaDataSet1"
+        Me.P_cafeteriaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'escoger_cafeteria
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(478, 496)
-        Me.Controls.Add(Me.RadioButton4)
-        Me.Controls.Add(Me.RadioButton3)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
-        Me.Controls.Add(Me.btnenviarAinicioUsuario)
-        Me.Controls.Add(Me.checkboxrecordareleccion)
+        Me.ClientSize = New System.Drawing.Size(717, 763)
+        Me.Controls.Add(Me.DGVCafeterias)
+        Me.Controls.Add(Me.BtnSalir)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.BtnAcceptarCafeteria)
+        Me.Controls.Add(Me.ChkRecordarSeleccion)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "escoger_cafeteria"
         Me.Text = "escoger_cafeteria"
+        CType(Me.DGVCafeterias, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PcafeteriaDataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P_cafeteriaDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents checkboxrecordareleccion As CheckBox
-    Friend WithEvents btnenviarAinicioUsuario As Button
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents ChkRecordarSeleccion As CheckBox
+    Friend WithEvents BtnAcceptarCafeteria As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents BtnSalir As Button
+    Friend WithEvents DGVCafeterias As DataGridView
+    Friend WithEvents P_cafeteriaDataSet1 As p_cafeteriaDataSet1
+    Friend WithEvents PcafeteriaDataSet1BindingSource As BindingSource
+    Friend WithEvents cafeteriaCheckbox As DataGridViewCheckBoxColumn
+    Friend WithEvents textCafeterias As DataGridViewTextBoxColumn
 End Class

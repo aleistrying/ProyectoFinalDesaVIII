@@ -22,51 +22,54 @@ Partial Class loginForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnLogin = New System.Windows.Forms.Button()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.BtnLogin = New System.Windows.Forms.Button()
+        Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnRegistro = New System.Windows.Forms.Button()
-        Me.lblOlvide = New System.Windows.Forms.Label()
+        Me.BtnSalir = New System.Windows.Forms.Button()
+        Me.BtnRegistro = New System.Windows.Forms.Button()
+        Me.LblOlvide = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'btnLogin
+        'BtnLogin
         '
-        Me.btnLogin.BackColor = System.Drawing.Color.Indigo
-        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(118, 326)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(240, 82)
-        Me.btnLogin.TabIndex = 0
-        Me.btnLogin.Text = "Ingresar"
-        Me.btnLogin.UseVisualStyleBackColor = False
+        Me.BtnLogin.BackColor = System.Drawing.Color.Indigo
+        Me.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnLogin.ForeColor = System.Drawing.Color.White
+        Me.BtnLogin.Location = New System.Drawing.Point(118, 326)
+        Me.BtnLogin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnLogin.Name = "BtnLogin"
+        Me.BtnLogin.Size = New System.Drawing.Size(240, 82)
+        Me.BtnLogin.TabIndex = 4
+        Me.BtnLogin.TabStop = False
+        Me.BtnLogin.Text = "Ingresar"
+        Me.BtnLogin.UseVisualStyleBackColor = False
         '
-        'txtPassword
+        'TxtPassword
         '
-        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.txtPassword.Location = New System.Drawing.Point(71, 242)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(323, 30)
-        Me.txtPassword.TabIndex = 1
+        Me.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.TxtPassword.Location = New System.Drawing.Point(71, 242)
+        Me.TxtPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPassword.Size = New System.Drawing.Size(323, 30)
+        Me.TxtPassword.TabIndex = 1
+        Me.TxtPassword.Text = "1Alejandro@"
         '
-        'txtUsuario
+        'TxtUsuario
         '
-        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.txtUsuario.Location = New System.Drawing.Point(71, 163)
-        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(323, 30)
-        Me.txtUsuario.TabIndex = 2
+        Me.TxtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.TxtUsuario.Location = New System.Drawing.Point(71, 163)
+        Me.TxtUsuario.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TxtUsuario.Name = "TxtUsuario"
+        Me.TxtUsuario.Size = New System.Drawing.Size(323, 30)
+        Me.TxtUsuario.TabIndex = 0
+        Me.TxtUsuario.Text = "alejandroparparcen@utp.ac.pa"
         '
         'lblUsuario
         '
@@ -101,44 +104,46 @@ Partial Class loginForm
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "App de Cafeteria"
         '
-        'btnSalir
+        'BtnSalir
         '
-        Me.btnSalir.BackColor = System.Drawing.Color.Brown
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btnSalir.ForeColor = System.Drawing.Color.White
-        Me.btnSalir.Location = New System.Drawing.Point(118, 510)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(240, 82)
-        Me.btnSalir.TabIndex = 6
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = False
+        Me.BtnSalir.BackColor = System.Drawing.Color.Brown
+        Me.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnSalir.ForeColor = System.Drawing.Color.White
+        Me.BtnSalir.Location = New System.Drawing.Point(118, 510)
+        Me.BtnSalir.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnSalir.Name = "BtnSalir"
+        Me.BtnSalir.Size = New System.Drawing.Size(240, 82)
+        Me.BtnSalir.TabIndex = 6
+        Me.BtnSalir.TabStop = False
+        Me.BtnSalir.Text = "Salir"
+        Me.BtnSalir.UseVisualStyleBackColor = False
         '
-        'btnRegistro
+        'BtnRegistro
         '
-        Me.btnRegistro.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btnRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnRegistro.Location = New System.Drawing.Point(118, 418)
-        Me.btnRegistro.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnRegistro.Name = "btnRegistro"
-        Me.btnRegistro.Size = New System.Drawing.Size(240, 82)
-        Me.btnRegistro.TabIndex = 7
-        Me.btnRegistro.Text = "Registro"
-        Me.btnRegistro.UseVisualStyleBackColor = False
+        Me.BtnRegistro.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRegistro.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnRegistro.Location = New System.Drawing.Point(118, 418)
+        Me.BtnRegistro.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnRegistro.Name = "BtnRegistro"
+        Me.BtnRegistro.Size = New System.Drawing.Size(240, 82)
+        Me.BtnRegistro.TabIndex = 5
+        Me.BtnRegistro.TabStop = False
+        Me.BtnRegistro.Text = "Registro"
+        Me.BtnRegistro.UseVisualStyleBackColor = False
         '
-        'lblOlvide
+        'LblOlvide
         '
-        Me.lblOlvide.AutoSize = True
-        Me.lblOlvide.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOlvide.Location = New System.Drawing.Point(163, 289)
-        Me.lblOlvide.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblOlvide.Name = "lblOlvide"
-        Me.lblOlvide.Size = New System.Drawing.Size(144, 20)
-        Me.lblOlvide.TabIndex = 8
-        Me.lblOlvide.Text = "Olvide mi password"
+        Me.LblOlvide.AutoSize = True
+        Me.LblOlvide.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblOlvide.Location = New System.Drawing.Point(163, 289)
+        Me.LblOlvide.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblOlvide.Name = "LblOlvide"
+        Me.LblOlvide.Size = New System.Drawing.Size(144, 20)
+        Me.LblOlvide.TabIndex = 3
+        Me.LblOlvide.Text = "Olvide mi password"
         '
         'loginForm
         '
@@ -146,15 +151,15 @@ Partial Class loginForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(484, 692)
-        Me.Controls.Add(Me.lblOlvide)
-        Me.Controls.Add(Me.btnRegistro)
-        Me.Controls.Add(Me.btnSalir)
+        Me.Controls.Add(Me.LblOlvide)
+        Me.Controls.Add(Me.BtnRegistro)
+        Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblUsuario)
-        Me.Controls.Add(Me.txtUsuario)
-        Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.btnLogin)
+        Me.Controls.Add(Me.TxtUsuario)
+        Me.Controls.Add(Me.TxtPassword)
+        Me.Controls.Add(Me.BtnLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "loginForm"
@@ -165,13 +170,13 @@ Partial Class loginForm
 
     End Sub
 
-    Friend WithEvents btnLogin As Button
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents BtnLogin As Button
+    Friend WithEvents TxtPassword As TextBox
+    Friend WithEvents TxtUsuario As TextBox
     Friend WithEvents lblUsuario As Label
     Friend WithEvents lblPassword As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnSalir As Button
-    Friend WithEvents btnRegistro As Button
-    Friend WithEvents lblOlvide As Label
+    Friend WithEvents BtnSalir As Button
+    Friend WithEvents BtnRegistro As Button
+    Friend WithEvents LblOlvide As Label
 End Class
