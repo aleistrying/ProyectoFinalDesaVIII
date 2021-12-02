@@ -22,7 +22,7 @@ Partial Class FormCarrito
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Carritodecompras = New System.Windows.Forms.DataGridView()
         Me.nombre_plato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioPlato = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,7 +39,7 @@ Partial Class FormCarrito
         '
         Me.Carritodecompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Carritodecompras.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombre_plato, Me.PrecioPlato, Me.DescripcionPlato, Me.ImagenPlato, Me.btneliminardelista})
-        Me.Carritodecompras.Location = New System.Drawing.Point(125, 57)
+        Me.Carritodecompras.Location = New System.Drawing.Point(132, 95)
         Me.Carritodecompras.Name = "Carritodecompras"
         Me.Carritodecompras.Size = New System.Drawing.Size(547, 212)
         Me.Carritodecompras.TabIndex = 0
@@ -69,17 +69,17 @@ Partial Class FormCarrito
         '
         'btneliminardelista
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.NullValue = "eliminar"
-        Me.btneliminardelista.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.NullValue = "eliminar"
+        Me.btneliminardelista.DefaultCellStyle = DataGridViewCellStyle3
         Me.btneliminardelista.HeaderText = "Eliminar"
         Me.btneliminardelista.Name = "btneliminardelista"
         Me.btneliminardelista.Text = "Eliminar"
         '
         'BtnPagar
         '
-        Me.BtnPagar.Location = New System.Drawing.Point(327, 353)
+        Me.BtnPagar.Location = New System.Drawing.Point(322, 352)
         Me.BtnPagar.Name = "BtnPagar"
         Me.BtnPagar.Size = New System.Drawing.Size(139, 49)
         Me.BtnPagar.TabIndex = 1
