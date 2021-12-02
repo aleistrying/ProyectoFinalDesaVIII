@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Inicio_de_sesion_usuario
+Partial Class MenuForm
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -34,71 +34,80 @@ Partial Class Inicio_de_sesion_usuario
         '
         'imagenPlato
         '
-        Me.imagenPlato.Location = New System.Drawing.Point(206, 104)
+        Me.imagenPlato.Location = New System.Drawing.Point(230, 25)
         Me.imagenPlato.Name = "imagenPlato"
-        Me.imagenPlato.Size = New System.Drawing.Size(189, 142)
+        Me.imagenPlato.Size = New System.Drawing.Size(381, 226)
         Me.imagenPlato.TabIndex = 0
         Me.imagenPlato.TabStop = False
+        Me.imagenPlato.UseWaitCursor = True
         '
         'Btn_platoAnterior
         '
-        Me.Btn_platoAnterior.Location = New System.Drawing.Point(50, 143)
+        Me.Btn_platoAnterior.Location = New System.Drawing.Point(109, 201)
         Me.Btn_platoAnterior.Name = "Btn_platoAnterior"
         Me.Btn_platoAnterior.Size = New System.Drawing.Size(115, 50)
         Me.Btn_platoAnterior.TabIndex = 1
         Me.Btn_platoAnterior.Text = "Anterior"
         Me.Btn_platoAnterior.UseVisualStyleBackColor = True
+        Me.Btn_platoAnterior.UseWaitCursor = True
         '
         'Btn_siguienteplato
         '
-        Me.Btn_siguienteplato.Location = New System.Drawing.Point(435, 143)
+        Me.Btn_siguienteplato.Location = New System.Drawing.Point(617, 201)
         Me.Btn_siguienteplato.Name = "Btn_siguienteplato"
         Me.Btn_siguienteplato.Size = New System.Drawing.Size(115, 50)
         Me.Btn_siguienteplato.TabIndex = 2
         Me.Btn_siguienteplato.Text = "Siguiente"
         Me.Btn_siguienteplato.UseVisualStyleBackColor = True
+        Me.Btn_siguienteplato.UseWaitCursor = True
         '
         'BotonPrecio_Plato
         '
-        Me.BotonPrecio_Plato.Location = New System.Drawing.Point(206, 297)
+        Me.BotonPrecio_Plato.Location = New System.Drawing.Point(323, 338)
         Me.BotonPrecio_Plato.Name = "BotonPrecio_Plato"
         Me.BotonPrecio_Plato.Size = New System.Drawing.Size(189, 30)
         Me.BotonPrecio_Plato.TabIndex = 3
         Me.BotonPrecio_Plato.Text = "Button3"
         Me.BotonPrecio_Plato.UseVisualStyleBackColor = True
+        Me.BotonPrecio_Plato.UseWaitCursor = True
         '
         'labelnumPlato
         '
         Me.labelnumPlato.AutoSize = True
-        Me.labelnumPlato.Location = New System.Drawing.Point(278, 249)
+        Me.labelnumPlato.Location = New System.Drawing.Point(392, 269)
         Me.labelnumPlato.Name = "labelnumPlato"
         Me.labelnumPlato.Size = New System.Drawing.Size(39, 13)
         Me.labelnumPlato.TabIndex = 4
         Me.labelnumPlato.Text = "Label1"
+        Me.labelnumPlato.UseWaitCursor = True
         '
         'labelNombrePlato
         '
         Me.labelNombrePlato.AutoSize = True
-        Me.labelNombrePlato.Location = New System.Drawing.Point(278, 281)
+        Me.labelNombrePlato.Location = New System.Drawing.Point(392, 301)
         Me.labelNombrePlato.Name = "labelNombrePlato"
         Me.labelNombrePlato.Size = New System.Drawing.Size(39, 13)
         Me.labelNombrePlato.TabIndex = 5
         Me.labelNombrePlato.Text = "Label1"
+        Me.labelNombrePlato.UseWaitCursor = True
         '
         'Btn_ir_al_carrito
         '
-        Me.Btn_ir_al_carrito.Location = New System.Drawing.Point(206, 351)
+        Me.Btn_ir_al_carrito.Location = New System.Drawing.Point(323, 389)
         Me.Btn_ir_al_carrito.Name = "Btn_ir_al_carrito"
         Me.Btn_ir_al_carrito.Size = New System.Drawing.Size(189, 67)
         Me.Btn_ir_al_carrito.TabIndex = 6
         Me.Btn_ir_al_carrito.Text = "Ir al carrito"
         Me.Btn_ir_al_carrito.UseVisualStyleBackColor = True
+        Me.Btn_ir_al_carrito.UseWaitCursor = True
         '
-        'Inicio_de_sesion_usuario
+        'MenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(595, 462)
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ClientSize = New System.Drawing.Size(875, 468)
         Me.Controls.Add(Me.Btn_ir_al_carrito)
         Me.Controls.Add(Me.labelNombrePlato)
         Me.Controls.Add(Me.labelnumPlato)
@@ -106,8 +115,9 @@ Partial Class Inicio_de_sesion_usuario
         Me.Controls.Add(Me.Btn_siguienteplato)
         Me.Controls.Add(Me.Btn_platoAnterior)
         Me.Controls.Add(Me.imagenPlato)
-        Me.Name = "Inicio_de_sesion_usuario"
-        Me.Text = "Inicio_de_sesion_usuario"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Name = "MenuForm"
+        Me.UseWaitCursor = True
         CType(Me.imagenPlato, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

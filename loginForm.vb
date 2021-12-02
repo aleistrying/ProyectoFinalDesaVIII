@@ -20,7 +20,7 @@ Public Class loginForm
 
         If (exists) Then
             Me.Hide()
-            Form1.Show()
+            PantallaPrincipal.Show()
             Exit Sub
         Else
             MsgBox("El usuario o password estan incorrectos.", MsgBoxStyle.OkOnly, "Error Login")
