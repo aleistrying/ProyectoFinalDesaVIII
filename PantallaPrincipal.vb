@@ -51,4 +51,8 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         AbrirFormenPanel(Of Añadir_fondos)()
     End Sub
+
+    Private Sub PantallaPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AbrirFormenPanel(Of MenuForm)()
+    End Sub
 End Class

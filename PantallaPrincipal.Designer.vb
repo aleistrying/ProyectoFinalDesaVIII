@@ -25,7 +25,6 @@ Partial Class PantallaPrincipal
         Me.btnCerrarsesion = New System.Windows.Forms.Button()
         Me.BtneditaUsuarios = New System.Windows.Forms.Button()
         Me.BtnEditarplatos = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Navegacion = New System.Windows.Forms.Panel()
         Me.btnAdmin = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -38,7 +37,6 @@ Partial Class PantallaPrincipal
         Me.PanelFormularios = New System.Windows.Forms.Panel()
         Me.Navegacion.SuspendLayout()
         CType(Me.imgUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelFormularios.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnCerrarsesion
@@ -80,18 +78,6 @@ Partial Class PantallaPrincipal
         Me.BtnEditarplatos.TabIndex = 11
         Me.BtnEditarplatos.Text = "Editar platos"
         Me.BtnEditarplatos.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(334, 24)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(130, 25)
-        Me.Label1.TabIndex = 23
-        Me.Label1.Text = "Bienvenidos"
         '
         'Navegacion
         '
@@ -200,7 +186,6 @@ Partial Class PantallaPrincipal
         '
         'PanelFormularios
         '
-        Me.PanelFormularios.Controls.Add(Me.Label1)
         Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelFormularios.Location = New System.Drawing.Point(0, 60)
         Me.PanelFormularios.Name = "PanelFormularios"
@@ -221,14 +206,11 @@ Partial Class PantallaPrincipal
         Me.Navegacion.ResumeLayout(False)
         Me.Navegacion.PerformLayout()
         CType(Me.imgUsuario, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelFormularios.ResumeLayout(False)
-        Me.PanelFormularios.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents BtneditaUsuarios As Button
     Friend WithEvents BtnEditarplatos As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents btnCerrarsesion As Button
     Friend WithEvents Navegacion As Panel
     Friend WithEvents Button1 As Button
