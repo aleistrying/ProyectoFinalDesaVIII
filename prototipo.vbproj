@@ -95,29 +95,29 @@
     <Compile Include="escoger cafeteria.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="PantallaPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="PantallaPrincipal.Designer.vb">
+      <DependentUpon>PantallaPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="EditarplatosForm.Designer.vb">
+      <DependentUpon>EditarplatosForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="EditarplatosForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <Compile Include="EditarUsuariosForm.Designer.vb">
+      <DependentUpon>EditarUsuariosForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form3.vb">
+    <Compile Include="EditarUsuariosForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.vb">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <Compile Include="AñadirPlatoForm.Designer.vb">
+      <DependentUpon>AñadirPlatoForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form4.vb">
+    <Compile Include="AñadirPlatoForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCarrito.Designer.vb">
@@ -138,10 +138,10 @@
     <Compile Include="Historial de facturas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio de sesion usuario.Designer.vb">
-      <DependentUpon>Inicio de sesion usuario.vb</DependentUpon>
+    <Compile Include="MenuForm.Designer.vb">
+      <DependentUpon>MenuForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inicio de sesion usuario.vb">
+    <Compile Include="MenuForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="loginForm.Designer.vb">
@@ -194,17 +194,17 @@
     <EmbeddedResource Include="escoger cafeteria.resx">
       <DependentUpon>escoger cafeteria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="EditarplatosForm.resx">
+      <DependentUpon>EditarplatosForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <EmbeddedResource Include="EditarUsuariosForm.resx">
+      <DependentUpon>EditarUsuariosForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <EmbeddedResource Include="AñadirPlatoForm.resx">
+      <DependentUpon>AñadirPlatoForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCarrito.resx">
       <DependentUpon>FormCarrito.vb</DependentUpon>
@@ -215,8 +215,8 @@
     <EmbeddedResource Include="Historial de facturas.resx">
       <DependentUpon>Historial de facturas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio de sesion usuario.resx">
-      <DependentUpon>Inicio de sesion usuario.vb</DependentUpon>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.vb</DependentUpon>

@@ -21,7 +21,7 @@
             MySql.ActualizarUsuarioCafeteria(loginForm.usuario)
         End If
         Me.Hide()
-        Inicio_de_sesion_usuario.Show()
+        MenuForm.Show()
     End Sub
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
