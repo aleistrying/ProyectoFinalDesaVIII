@@ -95,6 +95,18 @@
     <Compile Include="escoger cafeteria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="informacionForm.Designer.vb">
+      <DependentUpon>informacionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="informacionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiPerfilForm.Designer.vb">
+      <DependentUpon>MiPerfilForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MiPerfilForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PantallaPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +204,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="escoger cafeteria.resx">
       <DependentUpon>escoger cafeteria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informacionForm.resx">
+      <DependentUpon>informacionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiPerfilForm.resx">
+      <DependentUpon>MiPerfilForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.vb</DependentUpon>
