@@ -24,21 +24,21 @@ Partial Class Generacion_de_Factura
     Private Sub InitializeComponent()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.GeneracionFactura = New System.Windows.Forms.DataGridView()
         Me.nombrePlato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioPlato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnRegresar = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GeneracionFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'GeneracionFactura
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombrePlato, Me.precioPlato})
-        Me.DataGridView1.Location = New System.Drawing.Point(256, 65)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(244, 289)
-        Me.DataGridView1.TabIndex = 0
+        Me.GeneracionFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GeneracionFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombrePlato, Me.precioPlato})
+        Me.GeneracionFactura.Location = New System.Drawing.Point(256, 12)
+        Me.GeneracionFactura.Name = "GeneracionFactura"
+        Me.GeneracionFactura.Size = New System.Drawing.Size(244, 311)
+        Me.GeneracionFactura.TabIndex = 0
         '
         'nombrePlato
         '
@@ -54,7 +54,7 @@ Partial Class Generacion_de_Factura
         '
         'btnRegresar
         '
-        Me.btnRegresar.Location = New System.Drawing.Point(324, 388)
+        Me.btnRegresar.Location = New System.Drawing.Point(316, 375)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(111, 34)
         Me.btnRegresar.TabIndex = 1
@@ -67,17 +67,17 @@ Partial Class Generacion_de_Factura
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.btnRegresar)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.GeneracionFactura)
         Me.Name = "Generacion_de_Factura"
         Me.Text = "Generacion_de_Factura"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GeneracionFactura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents GeneracionFactura As DataGridView
     Friend WithEvents nombrePlato As DataGridViewTextBoxColumn
     Friend WithEvents precioPlato As DataGridViewTextBoxColumn
     Friend WithEvents btnRegresar As Button
