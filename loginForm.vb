@@ -5,6 +5,8 @@ Public Class loginForm
     Dim sqlCmd As New MySqlCommand
     Dim sqlConn As New MySqlConnection
     Dim sqlDr As MySqlDataReader
+    Public Shared usuario As Usuario
+
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
 
         If TxtUsuario.Text = "" Then
@@ -16,17 +18,48 @@ Public Class loginForm
         End If
         'crear hash del password
         Dim passHash As String = MD5HashText.HashFromText(TxtPassword.Text)
-        Dim exists As Integer = MySql.UsuarioLogin(TxtUsuario.Text, passHash)
+        Dim datosCorrectos As Integer = MySql.UsuarioLogin(TxtUsuario.Text, passHash)
 
-        If (exists) Then
-            Me.Hide()
-            escoger_cafeteria.Show()
-            Exit Sub
-        Else
+        If datosCorrectos = 0 Then
             MsgBox("El usuario o password estan incorrectos.", MsgBoxStyle.OkOnly, "Error Login")
             Exit Sub
         End If
 
+        'creamos la sesion del usuario. el password no es necesario porque validamos que los datos estan correctos ya.
+        usuario = MySql.CrearSesion(TxtUsuario.Text)
+        If usuario.GetSesionToken() = vbNullString Then
+            MessageBox.Show("Error", "Sucedio un error en la base de datos. No se pudo generar la sesion")
+        End If
+
+
+        'si el usuario ya tiene una cafeteria automatica, que vaya directo a la pantalla de inicio
+        If usuario.GetDefaultCafeteriaId() <> 0 Then
+            Me.Hide()
+            Inicio_de_sesion_usuario.Show()
+        End If
+
+
+        Dim cafeterias(,) As String = MySql.ListaCafeterias()
+        escoger_cafeteria.DGVCafeterias.Rows().Clear()
+        'For Each column As String In cafeterias
+        'lo dividimos entre 3 porque tenemos 3 columnas por cada row. EG. 12 elementos de array = 4 rows de datos. esta funciona cambia dependiendo de las filas que hayan.
+        For I As Integer = 0 To cafeterias.GetLength(1) - 1
+            escoger_cafeteria.DGVCafeterias.Rows.Add()
+            'checkboxes
+            escoger_cafeteria.DGVCafeterias.Rows(I).Cells(0).Value = False
+
+            'Solo mostramos el nombre por ahora
+            escoger_cafeteria.DGVCafeterias.Rows(I).Cells(1).Value = cafeterias(1, I)
+
+            'id
+            escoger_cafeteria.DGVCafeterias.Rows(I).Cells(2).Value = cafeterias(0, I)
+
+            'location
+            'DGVCafeterias.Rows(I).Cells(2).Value = cafeterias(2, I)
+        Next
+
+        Me.Hide()
+        escoger_cafeteria.Show()
     End Sub
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click

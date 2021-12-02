@@ -23,15 +23,19 @@ Partial Class escoger_cafeteria
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ChkRecordarSeleccion = New System.Windows.Forms.CheckBox()
         Me.BtnAcceptarCafeteria = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.DGVCafeterias = New System.Windows.Forms.DataGridView()
-        Me.cafeteriaCheckbox = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.textCafeterias = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PcafeteriaDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.P_cafeteriaDataSet1 = New prototipo.p_cafeteriaDataSet1()
+        Me.cafeteriaCheckbox = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.textCafeterias = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGVCafeterias, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PcafeteriaDataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.P_cafeteriaDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,33 +96,41 @@ Partial Class escoger_cafeteria
         Me.DGVCafeterias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DGVCafeterias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DGVCafeterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVCafeterias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cafeteriaCheckbox, Me.textCafeterias})
+        Me.DGVCafeterias.ColumnHeadersVisible = False
+        Me.DGVCafeterias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cafeteriaCheckbox, Me.textCafeterias, Me.id})
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVCafeterias.DefaultCellStyle = DataGridViewCellStyle1
+        Me.DGVCafeterias.GridColor = System.Drawing.SystemColors.Control
         Me.DGVCafeterias.Location = New System.Drawing.Point(230, 129)
         Me.DGVCafeterias.MultiSelect = False
         Me.DGVCafeterias.Name = "DGVCafeterias"
         Me.DGVCafeterias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVCafeterias.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DGVCafeterias.RowHeadersVisible = False
         Me.DGVCafeterias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Me.DGVCafeterias.RowTemplate.Height = 16
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DGVCafeterias.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVCafeterias.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVCafeterias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.DGVCafeterias.ShowEditingIcon = False
         Me.DGVCafeterias.Size = New System.Drawing.Size(286, 199)
         Me.DGVCafeterias.TabIndex = 11
-        '
-        'cafeteriaCheckbox
-        '
-        Me.cafeteriaCheckbox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.cafeteriaCheckbox.HeaderText = "test"
-        Me.cafeteriaCheckbox.MinimumWidth = 8
-        Me.cafeteriaCheckbox.Name = "cafeteriaCheckbox"
-        Me.cafeteriaCheckbox.Width = 42
-        '
-        'textCafeterias
-        '
-        Me.textCafeterias.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.textCafeterias.HeaderText = "Cafeterias"
-        Me.textCafeterias.MinimumWidth = 8
-        Me.textCafeterias.Name = "textCafeterias"
-        Me.textCafeterias.ReadOnly = True
         '
         'PcafeteriaDataSet1BindingSource
         '
@@ -129,6 +141,31 @@ Partial Class escoger_cafeteria
         '
         Me.P_cafeteriaDataSet1.DataSetName = "p_cafeteriaDataSet1"
         Me.P_cafeteriaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'cafeteriaCheckbox
+        '
+        Me.cafeteriaCheckbox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.cafeteriaCheckbox.HeaderText = ""
+        Me.cafeteriaCheckbox.MinimumWidth = 8
+        Me.cafeteriaCheckbox.Name = "cafeteriaCheckbox"
+        Me.cafeteriaCheckbox.Width = 8
+        '
+        'textCafeterias
+        '
+        Me.textCafeterias.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.textCafeterias.HeaderText = "Cafeterias"
+        Me.textCafeterias.MinimumWidth = 8
+        Me.textCafeterias.Name = "textCafeterias"
+        Me.textCafeterias.ReadOnly = True
+        '
+        'id
+        '
+        Me.id.HeaderText = "id"
+        Me.id.MinimumWidth = 8
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
+        Me.id.Width = 150
         '
         'escoger_cafeteria
         '
@@ -142,6 +179,7 @@ Partial Class escoger_cafeteria
         Me.Controls.Add(Me.ChkRecordarSeleccion)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "escoger_cafeteria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "escoger_cafeteria"
         CType(Me.DGVCafeterias, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PcafeteriaDataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -159,4 +197,5 @@ Partial Class escoger_cafeteria
     Friend WithEvents PcafeteriaDataSet1BindingSource As BindingSource
     Friend WithEvents cafeteriaCheckbox As DataGridViewCheckBoxColumn
     Friend WithEvents textCafeterias As DataGridViewTextBoxColumn
+    Friend WithEvents id As DataGridViewTextBoxColumn
 End Class

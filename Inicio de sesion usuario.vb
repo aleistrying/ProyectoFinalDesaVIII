@@ -3,4 +3,10 @@
         Me.Hide()
         FormCarrito.Show()
     End Sub
+
+    Private Sub Inicio_de_sesion_usuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim platos(,) As String = MySql.CargarPlatos(loginForm.usuario)
+        'cargamos el primer plato
+
+    End Sub
 End Class

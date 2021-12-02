@@ -28,51 +28,72 @@ Public Class MySql
         Dim user As Usuario
         Dim currentDate As Date = Date.Now
 
-        sqlCmd.CommandText = "SELECT id,nombre,apellido,tipoUsuario,foto,sexo FROM user WHERE email='" + email + "' AND login_enable=true"
+        'no deberia fallar este query a menos que no haya limitaciones en nombre o apellido
+        sqlCmd.CommandText = "SELECT id,nombre,apellido,tipoUsuario,COALESCE(foto,''),COALESCE(sexo,''), COALESCE(default_cafeteria_id,0) FROM user WHERE email='" + email + "' AND login_enable=true"
         sqlConn.Open()
         sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
 
         If Not sqlDr.HasRows Then
             MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
-            Return vbNull
+            Return vbNullString
         End If
+        Try
+            user = New Usuario(sqlDr.GetValue(0), sqlDr.GetString(1), sqlDr.GetString(2),
+                            email, sqlDr.GetValue(3), sqlDr.GetString(4), sqlDr.GetChar(5), sqlDr.GetValue(6))
+            'cafeteria seleccionada es la default.
+            user.SetCafeteriaIdSeleccionada(sqlDr.GetValue(6))
+        Catch ex As Exception
+            Return vbNullString
+        End Try
+        sqlDr.Close()
 
-        user = New Usuario(sqlDr.GetValue(0), sqlDr.GetString(1), sqlDr.GetString(2),
-                           email, sqlDr.GetValue(3), sqlDr.GetString(4), sqlDr.GetString(5))
 
         'Crear sesion en la base de datos
-        Dim sesionId As String = MD5HashText.HashFromText(user.ToString() + String.Format("{0:yyyy/MM/dd hh:mm:ss}", currentDate))
-        user.SetSesionId(sesionId)
+        Dim sesionToken As String = MD5HashText.HashFromText(user.ToString() + String.Format("{0:yyyy/MM/dd hh:mm:ss}", currentDate))
+        user.SetSesionToken(sesionToken)
         'revisar si existe el registro
         sqlCmd.CommandText = $"SELECT COUNT(*) FROM sesiones_vb WHERE userId='{user.GetId()}'"
-        sqlCmd.ExecuteReader()
+        sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
         Dim existe As Integer = sqlDr.GetValue(0)
-        sqlDr.Close() 'idk how expensive this could be
-
+        sqlDr.Close()
         'salvar la sesion en la base de datos
         If existe = 0 Then
             'si no existe crear el registro
-            sqlCmd.CommandText = $"INSERT INTO sesiones_vb(userId,token,createDate,updateDate) VALUES ({user.GetId()},'{user.GetSesion()}','{currentDate}','{currentDate}')"
+            sqlCmd.CommandText = $"INSERT INTO sesiones_vb(userId,token,createDate,updateDate) VALUES ({user.GetId()},'{user.GetSesionToken()}','{currentDate:yyyy/MM/dd hh:mm:ss}','{currentDate:yyyy/MM/dd hh:mm:ss}')"
             Dim rows = sqlCmd.ExecuteNonQuery()
             If rows = 0 Then
                 'eliminar la sesion del usuario
                 MessageBox.Show("Error Insertando", "Error al intentar insertar el registro de usuario en la base de datos.")
-                user.SetSesionId("")
+                user.SetSesionToken("")
             End If
         Else
             'si existe, actualizar el registro.
-            sqlCmd.CommandText = $"UPDATE sesiones_vb SET token = '{user.GetSesion()}', updateDate='{currentDate}' WHERE userId={user.GetId()}"
+            sqlCmd.CommandText = $"UPDATE sesiones_vb SET token = '{user.GetSesionToken()}', updateDate='{currentDate:yyyy/MM/dd hh:mm:ss}' WHERE userId={user.GetId()}"
             Dim rows = sqlCmd.ExecuteNonQuery()
             If rows = 0 Then
                 'eliminar la sesion del usuario
                 MessageBox.Show("Error Update", "Error al intentar actualizar el registro en la base de datos.")
-                user.SetSesionId("")
+                user.SetSesionToken("")
             End If
         End If
+        sqlConn.Close()
         'si todo sale bien, deberia tener el SesionId funcional
         Return user
+    End Function
+    Public Shared Function RevisarToken(user As Usuario)
+        sqlConn.Open()
+        sqlCmd.CommandText = $"SELECT COUNT(*) FROM sesiones_vb WHERE token='{user.GetSesionToken()}' AND token NOT NULL AND token NOT LIKE ''"
+        sqlDr.Read()
+        If Not sqlDr.HasRows Then
+            MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
+            Return vbNullString
+        End If
+        Dim tieneSesion As Integer = sqlDr.GetValue(0)
+        sqlDr.Close()
+        sqlConn.Close()
+        Return tieneSesion
     End Function
     Public Shared Function UsuarioExiste(email As String)
         sqlCmd = sqlConn.CreateCommand()
@@ -84,6 +105,7 @@ Public Class MySql
         Dim exists As Integer = sqlDr.GetValue(0)
 
         sqlDr.Close()
+        sqlConn.Close()
         Return exists
     End Function
     Public Shared Function CrearUsuario(email As String, nombre As String, apellido As String, pass As String)
@@ -103,8 +125,12 @@ Public Class MySql
         sqlConn.Close()
         Return rowsAffected
     End Function
-    Public Shared Function ActualizarCafeteria(cafeteriaId As String)
-
+    Public Shared Function ActualizarUsuarioCafeteria(user As Usuario)
+        sqlCmd.CommandText = $"UPDATE user SET default_cafeteria_id={user.GetCafeteriaIdSeleccionada()} WHERE id={user.GetId()}"
+        sqlConn.Open()
+        Dim updated As Integer = sqlCmd.ExecuteNonQuery()
+        sqlConn.Close()
+        Return updated
     End Function
 
     Public Shared Function ListaCafeterias()
@@ -119,7 +145,7 @@ Public Class MySql
         'revisamos si tiene datos el query.
         If Not sqlDr.HasRows Then
             MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, reintente mas tarde.")
-            Exit Function
+            Return vbNull
         End If
 
         'asignamos el valor de los rows al array multidimensional
@@ -142,5 +168,32 @@ Public Class MySql
         sqlDr.Close()
         sqlConn.Close()
         Return cafeterias
+    End Function
+    Public Shared Function CargarPlatos(user As Usuario)
+        'Mi propia vista.
+
+        sqlCmd.CommandText = $"SELECT COUNT(*) FROM platos_en_cafeteria pc,plato p, tipousuario t WHERE t.id={user.GetTipoUsuario()} AND pc.idPlato = p.id AND pc.idCafeteria={user.GetCafeteriaIdSeleccionada()} AND pc.stock <> 0 AND pc.enable = 1"
+        sqlConn.Open()
+        sqlDr = sqlCmd.ExecuteReader()
+        sqlDr.Read()
+        Dim rows As Integer = sqlDr.GetValue(0)
+        sqlDr.Close()
+
+        Dim platos(5, rows - 1) As String
+        sqlCmd.CommandText = $"SELECT p.id,p.nombre,p.descripcion,p.foto,ROUND((1-t.porcentaje_subsidio/100) * p.precio) precio, pc.stock FROM platos_en_cafeteria pc,plato p, tipousuario t WHERE t.id={user.GetTipoUsuario()} AND pc.idPlato = p.id AND pc.idCafeteria={user.GetCafeteriaIdSeleccionada()} AND pc.stock <> 0 AND pc.enable = 1"
+        sqlDr = sqlCmd.ExecuteReader()
+        Dim i = 0
+        While sqlDr.Read() = True
+            platos(0, i) = sqlDr.GetValue(0) 'id
+            platos(1, i) = sqlDr.GetString(1) 'nombre
+            platos(2, i) = sqlDr.GetString(2) 'desc
+            platos(3, i) = sqlDr.GetString(3) 'foto
+            platos(4, i) = sqlDr.GetValue(4) 'price
+            platos(5, i) = sqlDr.GetValue(5) 'stock
+            i += 1
+        End While
+        sqlDr.Close()
+        sqlConn.Close()
+        Return platos
     End Function
 End Class

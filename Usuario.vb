@@ -1,15 +1,20 @@
 ﻿
 Public Class Usuario
     Private id As Integer
-    Private sesionId As Integer
+    Private sesionToken As String
     Private nombre As String
     Private apellido As String
     Private email As String
     Private tipoUsuario As Integer
     Private foto As String
     Private sexo As Char
+    Private default_cafeteria_id As Integer
+    Private cafeteria_id_seleccionada As Integer
 
-    Public Sub New(_id As Integer, _nombre As String, _apellido As String, _email As String, _tipoUsuario As Integer, _foto As String, _sexo As String)
+    Public Sub New(_id As Integer, _nombre As String,
+                   _apellido As String, _email As String,
+                   _tipoUsuario As Integer, _foto As String,
+                   _sexo As Char, _default_cafeteria_id As Integer)
         id = _id
         nombre = _nombre
         apellido = _apellido
@@ -17,6 +22,7 @@ Public Class Usuario
         tipoUsuario = _tipoUsuario
         foto = _foto
         sexo = _sexo
+        default_cafeteria_id = _default_cafeteria_id
     End Sub
     Public Function GetId()
         Return id
@@ -36,8 +42,14 @@ Public Class Usuario
     Public Function GetSexo()
         Return sexo
     End Function
-    Public Function GetSesion()
-        Return sesionId
+    Public Function GetSesionToken()
+        Return sesionToken
+    End Function
+    Public Function GetDefaultCafeteriaId()
+        Return default_cafeteria_id
+    End Function
+    Public Function GetCafeteriaIdSeleccionada()
+        Return cafeteria_id_seleccionada
     End Function
 
     Public Sub SetId(_id As Integer)
@@ -61,8 +73,14 @@ Public Class Usuario
     Public Sub SetSexo(_sexo As Char)
         sexo = _sexo
     End Sub
-    Public Sub SetSesionId(_sesionId As String)
-        sesionId = _sesionId
+    Public Sub SetSesionToken(_sesionToken As String)
+        sesionToken = _sesionToken
+    End Sub
+    Public Sub SetDefaultCafeteriaId(_default_cafeteria_id As Integer)
+        default_cafeteria_id = _default_cafeteria_id
+    End Sub
+    Public Sub SetCafeteriaIdSeleccionada(_cafeteria_id_seleccionada As Integer)
+        cafeteria_id_seleccionada = _cafeteria_id_seleccionada
     End Sub
 
 End Class
