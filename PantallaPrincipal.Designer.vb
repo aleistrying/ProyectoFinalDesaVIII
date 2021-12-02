@@ -22,7 +22,7 @@ Partial Class PantallaPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnCerrarsesion = New System.Windows.Forms.Button()
         Me.BtneditaUsuarios = New System.Windows.Forms.Button()
         Me.BtnEditarplatos = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -41,19 +41,19 @@ Partial Class PantallaPrincipal
         Me.PanelFormularios.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button3
+        'btnCerrarsesion
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.Color.Red
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Location = New System.Drawing.Point(765, 3)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(107, 52)
-        Me.Button3.TabIndex = 24
-        Me.Button3.Text = "Cerrar Sesion"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnCerrarsesion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrarsesion.BackColor = System.Drawing.Color.Red
+        Me.btnCerrarsesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnCerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrarsesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCerrarsesion.Location = New System.Drawing.Point(765, 0)
+        Me.btnCerrarsesion.Name = "btnCerrarsesion"
+        Me.btnCerrarsesion.Size = New System.Drawing.Size(107, 59)
+        Me.btnCerrarsesion.TabIndex = 24
+        Me.btnCerrarsesion.Text = "Cerrar Sesion"
+        Me.btnCerrarsesion.UseVisualStyleBackColor = False
         '
         'BtneditaUsuarios
         '
@@ -87,7 +87,7 @@ Partial Class PantallaPrincipal
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(333, 25)
+        Me.Label1.Location = New System.Drawing.Point(334, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 25)
         Me.Label1.TabIndex = 23
@@ -96,7 +96,7 @@ Partial Class PantallaPrincipal
         'Navegacion
         '
         Me.Navegacion.Controls.Add(Me.btnAdmin)
-        Me.Navegacion.Controls.Add(Me.Button3)
+        Me.Navegacion.Controls.Add(Me.btnCerrarsesion)
         Me.Navegacion.Controls.Add(Me.BtneditaUsuarios)
         Me.Navegacion.Controls.Add(Me.Button2)
         Me.Navegacion.Controls.Add(Me.btnHistorial)
@@ -109,7 +109,7 @@ Partial Class PantallaPrincipal
         Me.Navegacion.Dock = System.Windows.Forms.DockStyle.Top
         Me.Navegacion.Location = New System.Drawing.Point(0, 0)
         Me.Navegacion.Name = "Navegacion"
-        Me.Navegacion.Size = New System.Drawing.Size(875, 58)
+        Me.Navegacion.Size = New System.Drawing.Size(875, 60)
         Me.Navegacion.TabIndex = 24
         '
         'btnAdmin
@@ -202,9 +202,9 @@ Partial Class PantallaPrincipal
         '
         Me.PanelFormularios.Controls.Add(Me.Label1)
         Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelFormularios.Location = New System.Drawing.Point(0, 58)
+        Me.PanelFormularios.Location = New System.Drawing.Point(0, 60)
         Me.PanelFormularios.Name = "PanelFormularios"
-        Me.PanelFormularios.Size = New System.Drawing.Size(875, 468)
+        Me.PanelFormularios.Size = New System.Drawing.Size(875, 466)
         Me.PanelFormularios.TabIndex = 25
         '
         'PantallaPrincipal
@@ -229,7 +229,7 @@ Partial Class PantallaPrincipal
     Friend WithEvents BtneditaUsuarios As Button
     Friend WithEvents BtnEditarplatos As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnCerrarsesion As Button
     Friend WithEvents Navegacion As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents Saldo As Label

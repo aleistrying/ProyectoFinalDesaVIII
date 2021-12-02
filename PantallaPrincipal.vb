@@ -16,16 +16,14 @@
 
     End Sub
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles BtnEditarplatos.Click
-        AbrirFormenPanel(Of Form2)()
+        AbrirFormenPanel(Of EditarplatosForm)()
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles BtneditaUsuarios.Click
-
-        Me.Hide()
-        Form3.Show()
+        AbrirFormenPanel(Of EditarUsuariosForm)()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnCerrarsesion.Click
         Me.Close()
         loginForm.Show()
     End Sub

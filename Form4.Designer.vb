@@ -26,14 +26,11 @@ Partial Class Form4
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.GroupBox1.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,30 +66,6 @@ Partial Class Form4
         Me.TextBox2.Size = New System.Drawing.Size(183, 20)
         Me.TextBox2.TabIndex = 3
         '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.White
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.ForeColor = System.Drawing.Color.DarkViolet
-        Me.Button8.Location = New System.Drawing.Point(37, 128)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(122, 56)
-        Me.Button8.TabIndex = 12
-        Me.Button8.Text = "Editar usuarios"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.White
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.ForeColor = System.Drawing.Color.DarkViolet
-        Me.Button7.Location = New System.Drawing.Point(37, 60)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(122, 56)
-        Me.Button7.TabIndex = 11
-        Me.Button7.Text = "Editar platos"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -109,21 +82,9 @@ Partial Class Form4
         Me.TextBox3.Size = New System.Drawing.Size(183, 20)
         Me.TextBox3.TabIndex = 14
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.DarkViolet
-        Me.GroupBox1.Controls.Add(Me.Button8)
-        Me.GroupBox1.Controls.Add(Me.Button7)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 5)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(205, 433)
-        Me.GroupBox1.TabIndex = 15
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
-        '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(255, 232)
+        Me.PictureBox1.Location = New System.Drawing.Point(255, 231)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(141, 140)
         Me.PictureBox1.TabIndex = 16
@@ -138,15 +99,22 @@ Partial Class Form4
         Me.Button1.Text = "Seleccionar imagen"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(30, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(77, 58)
+        Me.Panel1.TabIndex = 18
+        '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(875, 468)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
@@ -156,7 +124,6 @@ Partial Class Form4
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form4"
         Me.Text = "añadir platos"
-        Me.GroupBox1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -167,11 +134,9 @@ Partial Class Form4
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button7 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
 End Class
