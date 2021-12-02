@@ -1,6 +1,6 @@
 ﻿Public Class PantallaPrincipal
 
-    Private Sub AbrirFormenPanel(Of Miform As {Form, New})()
+    Public Sub AbrirFormenPanel(Of Miform As {Form, New})()
         Dim Formulario As Form
         Formulario = PanelFormularios.Controls.OfType(Of Miform)().FirstOrDefault()
         If Formulario Is Nothing Then
@@ -55,4 +55,5 @@
     Private Sub PantallaPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AbrirFormenPanel(Of MenuForm)()
     End Sub
+
 End Class

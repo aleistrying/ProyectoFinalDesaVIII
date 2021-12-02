@@ -1,20 +1,7 @@
 ﻿Public Class EditarplatosForm
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        Me.Hide()
-        Form4.Show()
+        PantallaPrincipal.AbrirFormenPanel(Of AñadirPlatoForm)()
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Me.Hide()
-        EditarUsuariosForm.Show()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
-        Me.Close()
-        loginForm.Show()
-
-    End Sub
-
 
 End Class

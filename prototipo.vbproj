@@ -114,10 +114,10 @@
     <Compile Include="EditarUsuariosForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.vb">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <Compile Include="AñadirPlatoForm.Designer.vb">
+      <DependentUpon>AñadirPlatoForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form4.vb">
+    <Compile Include="AñadirPlatoForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCarrito.Designer.vb">
@@ -202,8 +202,8 @@
     <EmbeddedResource Include="EditarUsuariosForm.resx">
       <DependentUpon>EditarUsuariosForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <EmbeddedResource Include="AñadirPlatoForm.resx">
+      <DependentUpon>AñadirPlatoForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCarrito.resx">
       <DependentUpon>FormCarrito.vb</DependentUpon>
