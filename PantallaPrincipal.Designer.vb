@@ -34,10 +34,7 @@ Partial Class PantallaPrincipal
         Me.LblSaldo = New System.Windows.Forms.Label()
         Me.LblNombreUsuario = New System.Windows.Forms.Label()
         Me.ImgUsuario = New System.Windows.Forms.PictureBox()
-        Me.Saldo = New System.Windows.Forms.Label()
-        Me.labelnombreUsuario = New System.Windows.Forms.Label()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
-        Me.ImgUsuario = New System.Windows.Forms.PictureBox()
         Me.Navegacion.SuspendLayout()
         CType(Me.ImgUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,7 +49,7 @@ Partial Class PantallaPrincipal
         Me.btnCerrarsesion.Location = New System.Drawing.Point(1152, 0)
         Me.btnCerrarsesion.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnCerrarsesion.Name = "btnCerrarsesion"
-        Me.btnCerrarsesion.Size = New System.Drawing.Size(160, 91)
+        Me.btnCerrarsesion.Size = New System.Drawing.Size(160, 92)
         Me.btnCerrarsesion.TabIndex = 24
         Me.btnCerrarsesion.Text = "Cerrar Sesion"
         Me.btnCerrarsesion.UseVisualStyleBackColor = False
@@ -63,13 +60,10 @@ Partial Class PantallaPrincipal
         Me.BtneditaUsuarios.FlatAppearance.BorderSize = 0
         Me.BtneditaUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtneditaUsuarios.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtneditaUsuarios.Location = New System.Drawing.Point(526, 1)
+        Me.BtneditaUsuarios.Location = New System.Drawing.Point(677, 3)
         Me.BtneditaUsuarios.Name = "BtneditaUsuarios"
-        Me.BtneditaUsuarios.Name = "BtneditaUsuarios"
-        Me.BtneditaUsuarios.Size = New System.Drawing.Size(128, 91)
-        Me.BtneditaUsuarios.Size = New System.Drawing.Size(85, 52)
+        Me.BtneditaUsuarios.Size = New System.Drawing.Size(112, 86)
         Me.BtneditaUsuarios.TabIndex = 12
-        Me.BtneditaUsuarios.Text = "Editar usuarios"
         Me.BtneditaUsuarios.Text = "Editar usuarios"
         Me.BtneditaUsuarios.UseVisualStyleBackColor = False
         '
@@ -79,13 +73,10 @@ Partial Class PantallaPrincipal
         Me.BtnEditarplatos.FlatAppearance.BorderSize = 0
         Me.BtnEditarplatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEditarplatos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnEditarplatos.Location = New System.Drawing.Point(446, 1)
+        Me.BtnEditarplatos.Location = New System.Drawing.Point(795, 3)
         Me.BtnEditarplatos.Name = "BtnEditarplatos"
-        Me.BtnEditarplatos.Name = "BtnEditarplatos"
-        Me.BtnEditarplatos.Size = New System.Drawing.Size(111, 91)
-        Me.BtnEditarplatos.Size = New System.Drawing.Size(74, 57)
+        Me.BtnEditarplatos.Size = New System.Drawing.Size(146, 86)
         Me.BtnEditarplatos.TabIndex = 11
-        Me.BtnEditarplatos.Text = "Editar platos"
         Me.BtnEditarplatos.Text = "Editar platos"
         Me.BtnEditarplatos.UseVisualStyleBackColor = False
         '
@@ -117,13 +108,10 @@ Partial Class PantallaPrincipal
         Me.btnAdmin.FlatAppearance.BorderSize = 0
         Me.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdmin.Location = New System.Drawing.Point(674, 1)
+        Me.btnAdmin.Location = New System.Drawing.Point(959, 3)
         Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(128, 91)
-        Me.btnAdmin.Size = New System.Drawing.Size(85, 47)
+        Me.btnAdmin.Size = New System.Drawing.Size(186, 86)
         Me.btnAdmin.TabIndex = 32
-        Me.btnAdmin.Text = "Admin"
         Me.btnAdmin.Text = "Admin"
         Me.btnAdmin.UseVisualStyleBackColor = False
         '
@@ -131,13 +119,10 @@ Partial Class PantallaPrincipal
         '
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(349, 1)
+        Me.Button2.Location = New System.Drawing.Point(433, 5)
         Me.Button2.Name = "Button2"
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(136, 91)
-        Me.Button2.Size = New System.Drawing.Size(91, 53)
+        Me.Button2.Size = New System.Drawing.Size(128, 84)
         Me.Button2.TabIndex = 31
-        Me.Button2.Text = "Añadir Fondos"
         Me.Button2.Text = "Añadir Fondos"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -145,12 +130,11 @@ Partial Class PantallaPrincipal
         '
         Me.btnHistorial.FlatAppearance.BorderSize = 0
         Me.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHistorial.Location = New System.Drawing.Point(430, 2)
+        Me.btnHistorial.Location = New System.Drawing.Point(558, 5)
         Me.btnHistorial.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnHistorial.Name = "btnHistorial"
-        Me.btnHistorial.Size = New System.Drawing.Size(56, 59)
+        Me.btnHistorial.Size = New System.Drawing.Size(112, 84)
         Me.btnHistorial.TabIndex = 30
-        Me.btnHistorial.Text = "Historial"
         Me.btnHistorial.Text = "Historial"
         Me.btnHistorial.UseVisualStyleBackColor = True
         '
@@ -158,12 +142,11 @@ Partial Class PantallaPrincipal
         '
         Me.btnPerfil.FlatAppearance.BorderSize = 0
         Me.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPerfil.Location = New System.Drawing.Point(310, 2)
+        Me.btnPerfil.Location = New System.Drawing.Point(326, 5)
         Me.btnPerfil.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnPerfil.Name = "btnPerfil"
-        Me.btnPerfil.Size = New System.Drawing.Size(74, 59)
+        Me.btnPerfil.Size = New System.Drawing.Size(100, 84)
         Me.btnPerfil.TabIndex = 29
-        Me.btnPerfil.Text = "Mi perfil"
         Me.btnPerfil.Text = "Mi perfil"
         Me.btnPerfil.UseVisualStyleBackColor = True
         '
@@ -171,12 +154,11 @@ Partial Class PantallaPrincipal
         '
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(228, 2)
+        Me.Button1.Location = New System.Drawing.Point(228, 5)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(49, 59)
+        Me.Button1.Size = New System.Drawing.Size(95, 82)
         Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Menu"
         Me.Button1.Text = "Menu"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -200,16 +182,7 @@ Partial Class PantallaPrincipal
         Me.LblNombreUsuario.TabIndex = 27
         Me.LblNombreUsuario.Text = "NombreUsuario"
         '
-        'imgUsuario
-        '
-        Me.ImgUsuario.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelFormularios.Location = New System.Drawing.Point(0, 60)
-        Me.PanelFormularios.Name = "PanelFormularios"
-        Me.PanelFormularios.Size = New System.Drawing.Size(875, 466)
-        Me.PanelFormularios.TabIndex = 25
-        '
-        'imgUsuario
+        'ImgUsuario
         '
         Me.ImgUsuario.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ImgUsuario.Location = New System.Drawing.Point(0, 0)

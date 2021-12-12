@@ -87,17 +87,14 @@ Public Class loginForm
         Me.Hide()
     End Sub
 
-    Private Sub BtnRegistro_Click(sender As Object, e As EventArgs) Handles BtnRegistro.Click
+    Private Sub BtnRegistro_Click(sender As Object, e As EventArgs) Handles btnRegistro.Click
         pantallaRegistro.Show()
         Me.Hide()
     End Sub
 
-    Private Sub loginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub BtnInformacionForm_Click(sender As Object, e As EventArgs) Handles BtnInformacionForm.Click
         Me.Hide()
         informacionForm.Show()
     End Sub
+
 End Class

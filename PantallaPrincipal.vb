@@ -41,14 +41,6 @@
         loginForm.Show()
     End Sub
 
-    Private Sub GroupBox3_Enter(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'AbrirFormenPanel(Of MenuForm)()
         With MenuForm
@@ -60,11 +52,6 @@
 
 
     End Sub
-
-    Private Sub btnPerfil_Click(sender As Object, e As EventArgs) Handles btnPerfil.Click
-
-    End Sub
-
     Private Sub btnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorial.Click
         'AbrirFormenPanel(Of Historial_de_facturas)()
         With Historial_de_facturas
