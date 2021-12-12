@@ -31,12 +31,12 @@ Partial Class PantallaPrincipal
         Me.btnHistorial = New System.Windows.Forms.Button()
         Me.btnPerfil = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Saldo = New System.Windows.Forms.Label()
-        Me.labelnombreUsuario = New System.Windows.Forms.Label()
-        Me.imgUsuario = New System.Windows.Forms.PictureBox()
+        Me.LblSaldo = New System.Windows.Forms.Label()
+        Me.LblNombreUsuario = New System.Windows.Forms.Label()
+        Me.ImgUsuario = New System.Windows.Forms.PictureBox()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
         Me.Navegacion.SuspendLayout()
-        CType(Me.imgUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImgUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCerrarsesion
@@ -46,9 +46,10 @@ Partial Class PantallaPrincipal
         Me.btnCerrarsesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrarsesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnCerrarsesion.Location = New System.Drawing.Point(768, 0)
+        Me.btnCerrarsesion.Location = New System.Drawing.Point(1152, 0)
+        Me.btnCerrarsesion.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnCerrarsesion.Name = "btnCerrarsesion"
-        Me.btnCerrarsesion.Size = New System.Drawing.Size(107, 59)
+        Me.btnCerrarsesion.Size = New System.Drawing.Size(160, 91)
         Me.btnCerrarsesion.TabIndex = 24
         Me.btnCerrarsesion.Text = "Cerrar Sesion"
         Me.btnCerrarsesion.UseVisualStyleBackColor = False
@@ -59,9 +60,10 @@ Partial Class PantallaPrincipal
         Me.BtneditaUsuarios.FlatAppearance.BorderSize = 0
         Me.BtneditaUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtneditaUsuarios.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtneditaUsuarios.Location = New System.Drawing.Point(526, 1)
+        Me.BtneditaUsuarios.Location = New System.Drawing.Point(789, 2)
+        Me.BtneditaUsuarios.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtneditaUsuarios.Name = "BtneditaUsuarios"
-        Me.BtneditaUsuarios.Size = New System.Drawing.Size(85, 59)
+        Me.BtneditaUsuarios.Size = New System.Drawing.Size(128, 91)
         Me.BtneditaUsuarios.TabIndex = 12
         Me.BtneditaUsuarios.Text = "Editar usuarios"
         Me.BtneditaUsuarios.UseVisualStyleBackColor = False
@@ -72,9 +74,10 @@ Partial Class PantallaPrincipal
         Me.BtnEditarplatos.FlatAppearance.BorderSize = 0
         Me.BtnEditarplatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEditarplatos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnEditarplatos.Location = New System.Drawing.Point(446, 1)
+        Me.BtnEditarplatos.Location = New System.Drawing.Point(669, 2)
+        Me.BtnEditarplatos.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnEditarplatos.Name = "BtnEditarplatos"
-        Me.BtnEditarplatos.Size = New System.Drawing.Size(74, 59)
+        Me.BtnEditarplatos.Size = New System.Drawing.Size(111, 91)
         Me.BtnEditarplatos.TabIndex = 11
         Me.BtnEditarplatos.Text = "Editar platos"
         Me.BtnEditarplatos.UseVisualStyleBackColor = False
@@ -89,13 +92,14 @@ Partial Class PantallaPrincipal
         Me.Navegacion.Controls.Add(Me.BtnEditarplatos)
         Me.Navegacion.Controls.Add(Me.btnPerfil)
         Me.Navegacion.Controls.Add(Me.Button1)
-        Me.Navegacion.Controls.Add(Me.Saldo)
-        Me.Navegacion.Controls.Add(Me.labelnombreUsuario)
-        Me.Navegacion.Controls.Add(Me.imgUsuario)
+        Me.Navegacion.Controls.Add(Me.LblSaldo)
+        Me.Navegacion.Controls.Add(Me.LblNombreUsuario)
+        Me.Navegacion.Controls.Add(Me.ImgUsuario)
         Me.Navegacion.Dock = System.Windows.Forms.DockStyle.Top
         Me.Navegacion.Location = New System.Drawing.Point(0, 0)
+        Me.Navegacion.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Navegacion.Name = "Navegacion"
-        Me.Navegacion.Size = New System.Drawing.Size(875, 60)
+        Me.Navegacion.Size = New System.Drawing.Size(1312, 92)
         Me.Navegacion.TabIndex = 24
         '
         'btnAdmin
@@ -105,9 +109,10 @@ Partial Class PantallaPrincipal
         Me.btnAdmin.FlatAppearance.BorderSize = 0
         Me.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdmin.Location = New System.Drawing.Point(674, 1)
+        Me.btnAdmin.Location = New System.Drawing.Point(1011, 2)
+        Me.btnAdmin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(85, 59)
+        Me.btnAdmin.Size = New System.Drawing.Size(128, 91)
         Me.btnAdmin.TabIndex = 32
         Me.btnAdmin.Text = "Admin"
         Me.btnAdmin.UseVisualStyleBackColor = False
@@ -116,9 +121,10 @@ Partial Class PantallaPrincipal
         '
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(349, 1)
+        Me.Button2.Location = New System.Drawing.Point(524, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(91, 59)
+        Me.Button2.Size = New System.Drawing.Size(136, 91)
         Me.Button2.TabIndex = 31
         Me.Button2.Text = "Añadir Fondos"
         Me.Button2.UseVisualStyleBackColor = True
@@ -127,9 +133,10 @@ Partial Class PantallaPrincipal
         '
         Me.btnHistorial.FlatAppearance.BorderSize = 0
         Me.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHistorial.Location = New System.Drawing.Point(287, 1)
+        Me.btnHistorial.Location = New System.Drawing.Point(430, 2)
+        Me.btnHistorial.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnHistorial.Name = "btnHistorial"
-        Me.btnHistorial.Size = New System.Drawing.Size(56, 59)
+        Me.btnHistorial.Size = New System.Drawing.Size(84, 91)
         Me.btnHistorial.TabIndex = 30
         Me.btnHistorial.Text = "Historial"
         Me.btnHistorial.UseVisualStyleBackColor = True
@@ -138,9 +145,10 @@ Partial Class PantallaPrincipal
         '
         Me.btnPerfil.FlatAppearance.BorderSize = 0
         Me.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPerfil.Location = New System.Drawing.Point(207, 1)
+        Me.btnPerfil.Location = New System.Drawing.Point(310, 2)
+        Me.btnPerfil.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnPerfil.Name = "btnPerfil"
-        Me.btnPerfil.Size = New System.Drawing.Size(74, 59)
+        Me.btnPerfil.Size = New System.Drawing.Size(111, 91)
         Me.btnPerfil.TabIndex = 29
         Me.btnPerfil.Text = "Mi perfil"
         Me.btnPerfil.UseVisualStyleBackColor = True
@@ -149,63 +157,70 @@ Partial Class PantallaPrincipal
         '
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(152, 1)
+        Me.Button1.Location = New System.Drawing.Point(228, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(49, 59)
+        Me.Button1.Size = New System.Drawing.Size(74, 91)
         Me.Button1.TabIndex = 25
         Me.Button1.Text = "Menu"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Saldo
+        'LblSaldo
         '
-        Me.Saldo.AutoSize = True
-        Me.Saldo.Location = New System.Drawing.Point(66, 32)
-        Me.Saldo.Name = "Saldo"
-        Me.Saldo.Size = New System.Drawing.Size(34, 13)
-        Me.Saldo.TabIndex = 28
-        Me.Saldo.Text = "Saldo"
+        Me.LblSaldo.AutoSize = True
+        Me.LblSaldo.Location = New System.Drawing.Point(99, 49)
+        Me.LblSaldo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblSaldo.Name = "LblSaldo"
+        Me.LblSaldo.Size = New System.Drawing.Size(50, 20)
+        Me.LblSaldo.TabIndex = 28
+        Me.LblSaldo.Text = "Saldo"
         '
-        'labelnombreUsuario
+        'LblNombreUsuario
         '
-        Me.labelnombreUsuario.AutoSize = True
-        Me.labelnombreUsuario.Location = New System.Drawing.Point(66, 9)
-        Me.labelnombreUsuario.Name = "labelnombreUsuario"
-        Me.labelnombreUsuario.Size = New System.Drawing.Size(80, 13)
-        Me.labelnombreUsuario.TabIndex = 27
-        Me.labelnombreUsuario.Text = "NombreUsuario"
+        Me.LblNombreUsuario.AutoSize = True
+        Me.LblNombreUsuario.Location = New System.Drawing.Point(99, 14)
+        Me.LblNombreUsuario.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblNombreUsuario.Name = "LblNombreUsuario"
+        Me.LblNombreUsuario.Size = New System.Drawing.Size(120, 20)
+        Me.LblNombreUsuario.TabIndex = 27
+        Me.LblNombreUsuario.Text = "NombreUsuario"
         '
-        'imgUsuario
+        'ImgUsuario
         '
-        Me.imgUsuario.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imgUsuario.Location = New System.Drawing.Point(0, 0)
-        Me.imgUsuario.Name = "imgUsuario"
-        Me.imgUsuario.Size = New System.Drawing.Size(60, 58)
-        Me.imgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgUsuario.TabIndex = 26
-        Me.imgUsuario.TabStop = False
+        Me.ImgUsuario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ImgUsuario.Location = New System.Drawing.Point(0, 0)
+        Me.ImgUsuario.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ImgUsuario.Name = "ImgUsuario"
+        Me.ImgUsuario.Size = New System.Drawing.Size(90, 89)
+        Me.ImgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImgUsuario.TabIndex = 26
+        Me.ImgUsuario.TabStop = False
         '
         'PanelFormularios
         '
         Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelFormularios.Location = New System.Drawing.Point(0, 60)
+        Me.PanelFormularios.Location = New System.Drawing.Point(0, 92)
+        Me.PanelFormularios.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PanelFormularios.Name = "PanelFormularios"
-        Me.PanelFormularios.Size = New System.Drawing.Size(875, 466)
+        Me.PanelFormularios.Size = New System.Drawing.Size(1312, 717)
         Me.PanelFormularios.TabIndex = 25
         '
         'PantallaPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(875, 526)
+        Me.ClientSize = New System.Drawing.Size(1312, 809)
         Me.Controls.Add(Me.PanelFormularios)
         Me.Controls.Add(Me.Navegacion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "PantallaPrincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Navegacion.ResumeLayout(False)
         Me.Navegacion.PerformLayout()
-        CType(Me.imgUsuario, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImgUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -214,9 +229,9 @@ Partial Class PantallaPrincipal
     Friend WithEvents btnCerrarsesion As Button
     Friend WithEvents Navegacion As Panel
     Friend WithEvents Button1 As Button
-    Friend WithEvents Saldo As Label
-    Friend WithEvents labelnombreUsuario As Label
-    Friend WithEvents imgUsuario As PictureBox
+    Friend WithEvents LblSaldo As Label
+    Friend WithEvents LblNombreUsuario As Label
+    Friend WithEvents ImgUsuario As PictureBox
     Friend WithEvents btnPerfil As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents btnHistorial As Button

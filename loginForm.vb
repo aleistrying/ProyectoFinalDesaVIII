@@ -2,9 +2,6 @@
 Imports System.Security.Cryptography
 
 Public Class loginForm
-    Dim sqlCmd As New MySqlCommand
-    Dim sqlConn As New MySqlConnection
-    Dim sqlDr As MySqlDataReader
     Public Shared usuario As Usuario
 
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
@@ -17,7 +14,7 @@ Public Class loginForm
             Exit Sub
         End If
         'crear hash del password
-        Dim passHash As String = MD5HashText.HashFromText(TxtPassword.Text)
+        Dim passHash As String = LCase(MD5HashText.HashFromText(LCase(MD5HashText.HashFromText(TxtPassword.Text))))
         Dim datosCorrectos As Integer = MySql.UsuarioLogin(TxtUsuario.Text, passHash)
 
         If datosCorrectos = 0 Then
@@ -28,38 +25,57 @@ Public Class loginForm
         'creamos la sesion del usuario. el password no es necesario porque validamos que los datos estan correctos ya.
         usuario = MySql.CrearSesion(TxtUsuario.Text)
         If usuario.GetSesionToken() = vbNullString Then
-            MessageBox.Show("Error", "Sucedio un error en la base de datos. No se pudo generar la sesion")
+            MessageBox.Show("Sucedio un error en la base de datos. No se pudo generar la sesion", "Error")
+            Exit Sub
         End If
 
 
         'si el usuario ya tiene una cafeteria automatica, que vaya directo a la pantalla de inicio
-        If usuario.GetDefaultCafeteriaId() <> 0 Then
-            Me.Hide()
-            Inicio_de_sesion_usuario.Show()
-        End If
+        'If usuario.GetDefaultCafeteriaId() <> 0 Then
+        'PantallaPrincipal.AbrirFormenPanel(Of MenuForm)()
+
+        'Exit Sub
+        'End If
 
 
-        Dim cafeterias(,) As String = MySql.ListaCafeterias()
-        escoger_cafeteria.DGVCafeterias.Rows().Clear()
+        'escoger_cafeteria.DGVCafeterias.Rows().Clear()
         'For Each column As String In cafeterias
         'lo dividimos entre 3 porque tenemos 3 columnas por cada row. EG. 12 elementos de array = 4 rows de datos. esta funciona cambia dependiendo de las filas que hayan.
-        For I As Integer = 0 To cafeterias.GetLength(1) - 1
-            escoger_cafeteria.DGVCafeterias.Rows.Add()
-            'checkboxes
-            escoger_cafeteria.DGVCafeterias.Rows(I).Cells(0).Value = False
+        'For I As Integer = 0 To cafeterias.GetLength(1) - 1
+        '    escoger_cafeteria.DGVCafeterias.Rows.Add()
+        '    'checkboxes
+        '    escoger_cafeteria.DGVCafeterias.Rows(I).Cells(0).Value = False
 
-            'Solo mostramos el nombre por ahora
-            escoger_cafeteria.DGVCafeterias.Rows(I).Cells(1).Value = cafeterias(1, I)
+        '    'Solo mostramos el nombre por ahora
+        '    escoger_cafeteria.DGVCafeterias.Rows(I).Cells(1).Value = cafeterias(1, I)
 
-            'id
-            escoger_cafeteria.DGVCafeterias.Rows(I).Cells(2).Value = cafeterias(0, I)
+        '    'id
+        '    escoger_cafeteria.DGVCafeterias.Rows(I).Cells(2).Value = cafeterias(0, I)
 
-            'location
-            'DGVCafeterias.Rows(I).Cells(2).Value = cafeterias(2, I)
-        Next
+        '    'location
+        '    'DGVCafeterias.Rows(I).Cells(2).Value = cafeterias(2, I)
+        'Next
+        'rellenar la barra de navegacion
+        PantallaPrincipal.LblNombreUsuario.Text = usuario.GetNombre()
+        PantallaPrincipal.LblSaldo.Text = String.Format("{0:C2}", usuario.GetSaldo())
+        Try
+            PantallaPrincipal.ImgUsuario.Load($"http://cafeteria.eastus2.cloudapp.azure.com/cdn/photo/perfil/{usuario.GetFoto()}")
+        Catch ex As Exception
+            MessageBox.Show("La imagen de perfil tuvo un error.", "Imagen Error")
+        End Try
 
         Me.Hide()
-        escoger_cafeteria.Show()
+        PantallaPrincipal.Show()
+        With MenuForm
+            .TopLevel = False
+            PantallaPrincipal.PanelFormularios.Controls.Add(MenuForm)
+            .BringToFront()
+            .Show()
+        End With
+
+        'Me.Hide()
+        'escoger_cafeteria.Show()
+        Exit Sub
     End Sub
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
@@ -76,8 +92,7 @@ Public Class loginForm
         Me.Hide()
     End Sub
 
-    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub loginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
-
 End Class

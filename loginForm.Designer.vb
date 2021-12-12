@@ -58,7 +58,7 @@ Partial Class loginForm
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPassword.Size = New System.Drawing.Size(323, 30)
         Me.TxtPassword.TabIndex = 1
-        Me.TxtPassword.Text = "1Alejandro@"
+        Me.TxtPassword.Text = "88362824283a80d2bf068c76d73da039"
         '
         'TxtUsuario
         '
@@ -69,7 +69,7 @@ Partial Class loginForm
         Me.TxtUsuario.Name = "TxtUsuario"
         Me.TxtUsuario.Size = New System.Drawing.Size(323, 30)
         Me.TxtUsuario.TabIndex = 0
-        Me.TxtUsuario.Text = "alejandroparparcen@utp.ac.pa"
+        Me.TxtUsuario.Text = "alejandro.parparcen@utp.ac.pa"
         '
         'lblUsuario
         '

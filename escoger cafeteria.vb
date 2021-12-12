@@ -21,7 +21,14 @@
             MySql.ActualizarUsuarioCafeteria(loginForm.usuario)
         End If
         Me.Hide()
-        MenuForm.Show()
+        PantallaPrincipal.Show()
+        'PantallaPrincipal.AbrirFormenPanel(Of MenuForm)()
+        With MenuForm
+            .TopLevel = False
+            PantallaPrincipal.PanelFormularios.Controls.Add(MenuForm)
+            .BringToFront()
+            .Show()
+        End With
     End Sub
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click

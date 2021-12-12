@@ -49,7 +49,7 @@ Public Class pantallaRegistro
         End If
 
 
-        Dim passHash As String = MD5HashText.HashFromText(txtPassword.Text)
+        Dim passHash As String = LCase(MD5HashText.HashFromText(LCase(MD5HashText.HashFromText(txtPassword.Text))))
         If passHash = "" Then
             MessageBox.Show("Error al crear el hash", "Error")
         End If

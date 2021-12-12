@@ -29,7 +29,7 @@ Public Class MySql
         Dim currentDate As Date = Date.Now
 
         'no deberia fallar este query a menos que no haya limitaciones en nombre o apellido
-        sqlCmd.CommandText = "SELECT id,nombre,apellido,tipoUsuario,COALESCE(foto,''),COALESCE(sexo,''), COALESCE(default_cafeteria_id,0) FROM user WHERE email='" + email + "' AND login_enable=true"
+        sqlCmd.CommandText = "SELECT id,nombre,apellido,tipoUsuario,COALESCE(foto,''),COALESCE(sexo,''), COALESCE(default_cafeteria_id,0), get_saldoById(id) saldo FROM user WHERE email='" + email + "' AND login_enable=true"
         sqlConn.Open()
         sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
@@ -43,6 +43,7 @@ Public Class MySql
                             email, sqlDr.GetValue(3), sqlDr.GetString(4), sqlDr.GetChar(5), sqlDr.GetValue(6))
             'cafeteria seleccionada es la default.
             user.SetCafeteriaIdSeleccionada(sqlDr.GetValue(6))
+            user.SetSaldo(sqlDr.GetValue(7))
         Catch ex As Exception
             Return vbNullString
         End Try
@@ -172,7 +173,15 @@ Public Class MySql
     Public Shared Function CargarPlatos(user As Usuario)
         'Mi propia vista.
 
-        sqlCmd.CommandText = $"SELECT COUNT(*) FROM platos_en_cafeteria pc,plato p, tipousuario t WHERE t.id={user.GetTipoUsuario()} AND pc.idPlato = p.id AND pc.idCafeteria={user.GetCafeteriaIdSeleccionada()} AND pc.stock <> 0 AND pc.enable = 1"
+        sqlCmd.CommandText = $"
+SELECT COUNT(*) 
+FROM platos_en_cafeteria pc,plato p,
+tipousuario tu LEFT JOIN  subsidio_tipo_usuario stu ON stu.tipo_usuario  = tu.id 
+WHERE tu.id={user.GetTipoUsuario()} 
+AND pc.idPlato = p.id 
+AND pc.idCafeteria={user.GetCafeteriaIdSeleccionada()} 
+AND pc.stock <> 0 
+AND pc.enable = 1"
         sqlConn.Open()
         sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
@@ -180,7 +189,15 @@ Public Class MySql
         sqlDr.Close()
 
         Dim platos(5, rows - 1) As String
-        sqlCmd.CommandText = $"SELECT p.id,p.nombre,p.descripcion,p.foto,ROUND((1-t.porcentaje_subsidio/100) * p.precio) precio, pc.stock FROM platos_en_cafeteria pc,plato p, tipousuario t WHERE t.id={user.GetTipoUsuario()} AND pc.idPlato = p.id AND pc.idCafeteria={user.GetCafeteriaIdSeleccionada()} AND pc.stock <> 0 AND pc.enable = 1"
+        sqlCmd.CommandText = $"
+SELECT p.id,p.nombre,p.descripcion,p.foto,ROUND((1-NVL(stu.porcentaje_subsidio,0)/100) * p.precio,2) precio, pc.stock
+FROM platos_en_cafeteria pc,plato p,
+tipousuario tu LEFT JOIN  subsidio_tipo_usuario stu ON stu.tipo_usuario  = tu.id 
+WHERE tu.id={user.GetTipoUsuario()} 
+AND pc.idPlato = p.id 
+AND pc.idCafeteria={user.GetCafeteriaIdSeleccionada()} 
+AND pc.stock <> 0 
+AND pc.enable = 1"
         sqlDr = sqlCmd.ExecuteReader()
         Dim i = 0
         While sqlDr.Read() = True
@@ -188,7 +205,7 @@ Public Class MySql
             platos(1, i) = sqlDr.GetString(1) 'nombre
             platos(2, i) = sqlDr.GetString(2) 'desc
             platos(3, i) = sqlDr.GetString(3) 'foto
-            platos(4, i) = sqlDr.GetValue(4) 'price
+            platos(4, i) = sqlDr.GetDouble(4) 'price
             platos(5, i) = sqlDr.GetValue(5) 'stock
             i += 1
         End While
