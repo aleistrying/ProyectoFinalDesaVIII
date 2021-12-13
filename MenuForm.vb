@@ -1,8 +1,8 @@
 ﻿Public Class MenuForm
 
-    Dim plato = 0
-    Dim platos(,) As String
-    Dim cafeterias(,) As String
+    Public plato = 0
+    Public platos(,) As String
+    Public cafeterias(,) As String
     'Private Sub Btn_ir_al_carrito_Click(sender As Object, e As EventArgs)
     '    Me.Hide()
     '    FormCarrito.Show()
@@ -24,7 +24,7 @@
 
         platos = MySql.CargarPlatos(loginForm.usuario)
         'cargamos el primer plato
-        If platos.Length > 0 Then
+        If platos.Length <> 0 Then
             plato = 0
             LblNombrePlato.Text = platos(1, 0)
             BtnPrecioPlato.Text = Math.Round(CDbl(platos(4, 0)), 2).ToString("C2")
@@ -35,16 +35,18 @@
             End Try
         End If
 
-        If platos.GetLength(1) - 1 = plato Then
+
+        If platos.GetLength(1) - 1 = plato And plato <> -1 And platos.GetLength(0) <> 1 Then
             BtnSiguientePlato.Visible = False
+            BtnPlatoAnterior.Visible = True
         ElseIf 0 = plato Then
             BtnPlatoAnterior.Visible = False
-        Else
-            BtnPlatoAnterior.Visible = True
             BtnSiguientePlato.Visible = True
+        Else
+            BtnPlatoAnterior.Visible = False
+            BtnSiguientePlato.Visible = False
         End If
     End Sub
-
     Private Sub BtnSiguientePlato_Click(sender As Object, e As EventArgs) Handles BtnSiguientePlato.Click
         If platos.GetLength(1) - 1 > plato Then
             plato += 1
@@ -58,14 +60,15 @@
 
         End If
 
-
-        If platos.GetLength(1) - 1 = plato Then
+        If platos.GetLength(1) - 1 = plato And plato <> -1 And platos.GetLength(0) <> 1 Then
             BtnSiguientePlato.Visible = False
+            BtnPlatoAnterior.Visible = True
         ElseIf 0 = plato Then
             BtnPlatoAnterior.Visible = False
-        Else
-            BtnPlatoAnterior.Visible = True
             BtnSiguientePlato.Visible = True
+        Else
+            BtnPlatoAnterior.Visible = False
+            BtnSiguientePlato.Visible = False
         End If
     End Sub
 
@@ -84,15 +87,17 @@
             plato = -1
         End If
 
-        If platos.GetLength(1) - 1 = plato Then
+
+        If platos.GetLength(1) - 1 = plato And plato <> -1 And platos.GetLength(0) <> 1 Then
             BtnSiguientePlato.Visible = False
+            BtnPlatoAnterior.Visible = True
         ElseIf 0 = plato Then
             BtnPlatoAnterior.Visible = False
-        Else
-            BtnPlatoAnterior.Visible = True
             BtnSiguientePlato.Visible = True
+        Else
+            BtnPlatoAnterior.Visible = False
+            BtnSiguientePlato.Visible = False
         End If
-
 
     End Sub
 
@@ -107,7 +112,7 @@
 
             platos = MySql.CargarPlatos(loginForm.usuario)
             'cargamos el primer plato
-            If platos.Length > 0 Then
+            If platos.Length <> 0 Then
                 plato = 0
                 LblNombrePlato.Text = platos(1, 0)
                 BtnPrecioPlato.Show()
@@ -120,19 +125,21 @@
                 End Try
             Else
                 plato = -1
-                LblNombrePlato.Text = "No hay platos"
+                LblNombrePlato.Text = "No hay platos en esta cafeteria"
                 BtnPrecioPlato.Text = ""
                 BtnPrecioPlato.Hide()
                 ImagenPlato.Hide()
             End If
 
-            If platos.GetLength(1) - 1 = plato And plato <> -1 Then
+            If platos.GetLength(1) - 1 = plato And plato <> -1 And platos.GetLength(0) <> 1 Then
                 BtnSiguientePlato.Visible = False
+                BtnPlatoAnterior.Visible = True
             ElseIf 0 = plato Then
                 BtnPlatoAnterior.Visible = False
-            Else
-                BtnPlatoAnterior.Visible = True
                 BtnSiguientePlato.Visible = True
+            Else
+                BtnPlatoAnterior.Visible = False
+                BtnSiguientePlato.Visible = False
             End If
         End If
     End Sub
@@ -143,7 +150,7 @@
         FormCarrito.LblNombre.Text = platos(1, plato)
         FormCarrito.LblDescripcion.Text = platos(2, plato)
         FormCarrito.ImagenCompra.Load("http://cafeteria.eastus2.cloudapp.azure.com/cdn/photo/platos/" + platos(3, plato))
-        FormCarrito.LblPrecio.Text = platos(4, plato) + " $"
+        FormCarrito.LblPrecio.Text = Math.Round(CDbl(platos(4, plato)), 2).ToString("C2")
 
         With FormCarrito
             .TopLevel = False

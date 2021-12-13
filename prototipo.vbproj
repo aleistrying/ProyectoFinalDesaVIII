@@ -138,10 +138,10 @@
     <Compile Include="FormCarrito.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Generacion de Factura.Designer.vb">
-      <DependentUpon>Generacion de Factura.vb</DependentUpon>
+    <Compile Include="FormFactura.Designer.vb">
+      <DependentUpon>FormFactura.vb</DependentUpon>
     </Compile>
-    <Compile Include="Generacion de Factura.vb">
+    <Compile Include="FormFactura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Historial de facturas.Designer.vb">
@@ -227,8 +227,8 @@
     <EmbeddedResource Include="FormCarrito.resx">
       <DependentUpon>FormCarrito.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Generacion de Factura.resx">
-      <DependentUpon>Generacion de Factura.vb</DependentUpon>
+    <EmbeddedResource Include="FormFactura.resx">
+      <DependentUpon>FormFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Historial de facturas.resx">
       <DependentUpon>Historial de facturas.vb</DependentUpon>

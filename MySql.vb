@@ -85,7 +85,8 @@ Public Class MySql
     End Function
     Public Shared Function RevisarToken(user As Usuario)
         sqlConn.Open()
-        sqlCmd.CommandText = $"SELECT COUNT(*) FROM sesiones_vb WHERE token='{user.GetSesionToken()}' AND token NOT NULL AND token NOT LIKE ''"
+        sqlCmd.CommandText = $"SELECT COUNT(*) FROM sesiones_vb WHERE token='{user.GetSesionToken()}' AND token IS NOT NULL AND token NOT LIKE ''"
+        sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
         If Not sqlDr.HasRows Then
             MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
@@ -212,5 +213,71 @@ AND pc.enable = 1"
         sqlDr.Close()
         sqlConn.Close()
         Return platos
+    End Function
+    Public Shared Function GetSaldo(user As Usuario)
+        sqlConn.Open()
+        sqlCmd.CommandText = $"SELECT get_saldoById({user.GetId()}) FROM sesiones_vb WHERE token='{user.GetSesionToken()}' AND token IS NOT NULL AND token NOT LIKE ''"
+        sqlDr = sqlCmd.ExecuteReader()
+        sqlDr.Read()
+
+        If Not sqlDr.HasRows Then
+            'MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
+            Return vbNullString
+        End If
+
+        Dim saldo As Double = sqlDr.GetDouble(0)
+        sqlDr.Close()
+        sqlConn.Close()
+        Return saldo
+
+    End Function
+    Public Shared Function CrearFactura(platoId As Integer, user As Usuario)
+        sqlConn.Open()
+        sqlCmd.CommandText = $"SELECT add_Factura2({platoId},{user.GetCafeteriaIdSeleccionada()},{user.GetId()}) FROM sesiones_vb WHERE token='{user.GetSesionToken()}' AND token IS NOT NULL AND token NOT LIKE ''"
+        sqlDr = sqlCmd.ExecuteReader()
+        sqlDr.Read()
+
+        If Not sqlDr.HasRows Then
+            'MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
+            Return vbNullString
+        End If
+
+        Dim facturaId = sqlDr.GetValue(0)
+        sqlDr.Close()
+        sqlConn.Close()
+        Return facturaId
+
+    End Function
+    Public Shared Function GetFactura(facturaId As String, user As Usuario)
+        sqlConn.Open()
+        sqlCmd.CommandText = $"SELECT client_name cliente, 
+order_code facturaId, description_order descripcion, order_status status, 
+responsible_cafe cafeteria, order_amount monto, order_date fecha
+FROM pedidos_realizados
+WHERE order_code = {facturaId}"
+        sqlDr = sqlCmd.ExecuteReader()
+        sqlDr.Read()
+
+        If Not sqlDr.HasRows Then
+            'MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
+            Return vbNullString
+        End If
+        Dim factura As New Dictionary(Of String, String)
+        'Dim i = 0
+        While sqlDr.Read() = True
+            factura.Add("cliente", sqlDr.GetValue(0)) 'cliente
+            factura.Add("facturaId", sqlDr.GetValue(1)) 'facturaId
+            factura.Add("descripcion", sqlDr.GetValue(2)) 'descripcion
+            factura.Add("status", sqlDr.GetValue(3)) 'status
+            factura.Add("cafeteria", sqlDr.GetValue(4)) 'cafeteria
+            factura.Add("monto", sqlDr.GetValue(5)) 'monto
+            factura.Add("fecha", sqlDr.GetValue(6)) 'fecha
+            'i += 1
+        End While
+
+        sqlDr.Close()
+        sqlConn.Close()
+
+        Return factura
     End Function
 End Class

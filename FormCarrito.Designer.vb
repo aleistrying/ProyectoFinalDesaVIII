@@ -22,7 +22,7 @@ Partial Class FormCarrito
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.CarritodeCompras = New System.Windows.Forms.DataGridView()
         Me.nombre_plato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioPlato = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,10 +85,10 @@ Partial Class FormCarrito
         '
         'btneliminardelista
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.NullValue = "eliminar"
-        Me.btneliminardelista.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.NullValue = "eliminar"
+        Me.btneliminardelista.DefaultCellStyle = DataGridViewCellStyle2
         Me.btneliminardelista.HeaderText = "Eliminar"
         Me.btneliminardelista.MinimumWidth = 8
         Me.btneliminardelista.Name = "btneliminardelista"
@@ -98,7 +98,7 @@ Partial Class FormCarrito
         'BtnPagar
         '
         Me.BtnPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.BtnPagar.Location = New System.Drawing.Point(477, 457)
+        Me.BtnPagar.Location = New System.Drawing.Point(563, 469)
         Me.BtnPagar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnPagar.Name = "BtnPagar"
         Me.BtnPagar.Size = New System.Drawing.Size(208, 75)
@@ -120,22 +120,22 @@ Partial Class FormCarrito
         'LblPrecio
         '
         Me.LblPrecio.AutoSize = True
-        Me.LblPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.LblPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.LblPrecio.Location = New System.Drawing.Point(735, 367)
         Me.LblPrecio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblPrecio.Name = "LblPrecio"
-        Me.LblPrecio.Size = New System.Drawing.Size(95, 29)
+        Me.LblPrecio.Size = New System.Drawing.Size(167, 48)
         Me.LblPrecio.TabIndex = 3
         Me.LblPrecio.Text = "Precio: "
         '
         'lblresm
         '
         Me.lblresm.AutoSize = True
-        Me.lblresm.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
-        Me.lblresm.Location = New System.Drawing.Point(420, 38)
+        Me.lblresm.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.lblresm.Location = New System.Drawing.Point(487, 31)
         Me.lblresm.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblresm.Name = "lblresm"
-        Me.lblresm.Size = New System.Drawing.Size(359, 40)
+        Me.lblresm.Size = New System.Drawing.Size(398, 46)
         Me.lblresm.TabIndex = 4
         Me.lblresm.Text = "Resumen de Compra"
         '
@@ -144,14 +144,14 @@ Partial Class FormCarrito
         Me.ImagenCompra.Location = New System.Drawing.Point(144, 147)
         Me.ImagenCompra.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ImagenCompra.Name = "ImagenCompra"
-        Me.ImagenCompra.Size = New System.Drawing.Size(416, 249)
+        Me.ImagenCompra.Size = New System.Drawing.Size(541, 268)
         Me.ImagenCompra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ImagenCompra.TabIndex = 5
         Me.ImagenCompra.TabStop = False
         '
         'LblDescripcion
         '
-        Me.LblDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.LblDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.LblDescripcion.Location = New System.Drawing.Point(735, 233)
         Me.LblDescripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblDescripcion.Name = "LblDescripcion"
@@ -162,7 +162,7 @@ Partial Class FormCarrito
         'BtnVolver
         '
         Me.BtnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.BtnVolver.Location = New System.Drawing.Point(477, 571)
+        Me.BtnVolver.Location = New System.Drawing.Point(563, 583)
         Me.BtnVolver.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BtnVolver.Name = "BtnVolver"
         Me.BtnVolver.Size = New System.Drawing.Size(208, 75)
@@ -174,7 +174,7 @@ Partial Class FormCarrito
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1200, 692)
+        Me.ClientSize = New System.Drawing.Size(1315, 719)
         Me.Controls.Add(Me.BtnVolver)
         Me.Controls.Add(Me.LblDescripcion)
         Me.Controls.Add(Me.ImagenCompra)
@@ -183,8 +183,10 @@ Partial Class FormCarrito
         Me.Controls.Add(Me.LblNombre)
         Me.Controls.Add(Me.BtnPagar)
         Me.Controls.Add(Me.CarritodeCompras)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "FormCarrito"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Resumen de Compra"
         CType(Me.CarritodeCompras, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImagenCompra, System.ComponentModel.ISupportInitialize).EndInit()
