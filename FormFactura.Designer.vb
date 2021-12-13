@@ -124,7 +124,7 @@ Partial Class FormFactura
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(454, 357)
+        Me.Label4.Location = New System.Drawing.Point(353, 357)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(122, 37)
         Me.Label4.TabIndex = 6
@@ -134,7 +134,7 @@ Partial Class FormFactura
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(683, 357)
+        Me.Label5.Location = New System.Drawing.Point(730, 357)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(111, 37)
         Me.Label5.TabIndex = 7
@@ -144,7 +144,7 @@ Partial Class FormFactura
         '
         Me.LblTotal.AutoSize = True
         Me.LblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.LblTotal.Location = New System.Drawing.Point(698, 417)
+        Me.LblTotal.Location = New System.Drawing.Point(730, 417)
         Me.LblTotal.Name = "LblTotal"
         Me.LblTotal.Size = New System.Drawing.Size(79, 32)
         Me.LblTotal.TabIndex = 8
@@ -152,11 +152,10 @@ Partial Class FormFactura
         '
         'LblItem
         '
-        Me.LblItem.AutoSize = True
         Me.LblItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.LblItem.Location = New System.Drawing.Point(482, 417)
+        Me.LblItem.Location = New System.Drawing.Point(360, 417)
         Me.LblItem.Name = "LblItem"
-        Me.LblItem.Size = New System.Drawing.Size(69, 32)
+        Me.LblItem.Size = New System.Drawing.Size(231, 120)
         Me.LblItem.TabIndex = 9
         Me.LblItem.Text = "Item"
         '

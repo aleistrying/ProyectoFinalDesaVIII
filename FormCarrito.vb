@@ -45,9 +45,9 @@
             Exit Sub
         End If
 
-        FormFactura.LblFecha.Text = factura.Item("fecha")
-        FormFactura.LblCliente.Text = factura.Item("cliente")
-        FormFactura.LblCafeteria.Text = factura.Item("cafeteria")
+        FormFactura.LblFecha.Text = "Fecha: " + factura.Item("fecha")
+        FormFactura.LblCliente.Text = "Cliente: " + factura.Item("cliente")
+        FormFactura.LblCafeteria.Text = "Cafeteria: " + factura.Item("cafeteria")
         FormFactura.LblItem.Text = factura.Item("descripcion")
         FormFactura.LblTotal.Text = factura.Item("monto")
 

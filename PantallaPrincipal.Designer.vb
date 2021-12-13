@@ -26,7 +26,7 @@ Partial Class PantallaPrincipal
         Me.BtneditaUsuarios = New System.Windows.Forms.Button()
         Me.BtnEditarplatos = New System.Windows.Forms.Button()
         Me.Navegacion = New System.Windows.Forms.Panel()
-        Me.btnAdmin = New System.Windows.Forms.Button()
+        Me.BtnAdmin = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnHistorial = New System.Windows.Forms.Button()
         Me.btnPerfil = New System.Windows.Forms.Button()
@@ -83,7 +83,7 @@ Partial Class PantallaPrincipal
         'Navegacion
         '
         Me.Navegacion.BackColor = System.Drawing.Color.LightGray
-        Me.Navegacion.Controls.Add(Me.btnAdmin)
+        Me.Navegacion.Controls.Add(Me.BtnAdmin)
         Me.Navegacion.Controls.Add(Me.btnCerrarsesion)
         Me.Navegacion.Controls.Add(Me.BtneditaUsuarios)
         Me.Navegacion.Controls.Add(Me.Button2)
@@ -101,19 +101,19 @@ Partial Class PantallaPrincipal
         Me.Navegacion.Size = New System.Drawing.Size(1312, 92)
         Me.Navegacion.TabIndex = 24
         '
-        'btnAdmin
+        'BtnAdmin
         '
-        Me.btnAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAdmin.BackColor = System.Drawing.Color.LightGray
-        Me.btnAdmin.FlatAppearance.BorderSize = 0
-        Me.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdmin.Location = New System.Drawing.Point(959, 3)
-        Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(186, 86)
-        Me.btnAdmin.TabIndex = 32
-        Me.btnAdmin.Text = "Admin"
-        Me.btnAdmin.UseVisualStyleBackColor = False
+        Me.BtnAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnAdmin.BackColor = System.Drawing.Color.LightGray
+        Me.BtnAdmin.FlatAppearance.BorderSize = 0
+        Me.BtnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnAdmin.Location = New System.Drawing.Point(959, 3)
+        Me.BtnAdmin.Name = "BtnAdmin"
+        Me.BtnAdmin.Size = New System.Drawing.Size(186, 86)
+        Me.BtnAdmin.TabIndex = 32
+        Me.BtnAdmin.Text = "Admin"
+        Me.BtnAdmin.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -232,6 +232,6 @@ Partial Class PantallaPrincipal
     Friend WithEvents btnPerfil As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents btnHistorial As Button
-    Friend WithEvents btnAdmin As Button
+    Friend WithEvents BtnAdmin As Button
     Friend WithEvents PanelFormularios As Panel
 End Class

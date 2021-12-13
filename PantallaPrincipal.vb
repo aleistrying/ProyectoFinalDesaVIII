@@ -49,11 +49,20 @@
             .BringToFront()
             .Show()
         End With
-
-
     End Sub
     Private Sub btnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorial.Click
         'AbrirFormenPanel(Of Historial_de_facturas)()
+
+        Historial_de_facturas.facturas = MySql.GetFacturas(loginForm.usuario)
+        Historial_de_facturas.HistorialDeFacturasDG.Rows.Clear()
+        For i As Integer = 0 To Historial_de_facturas.facturas.Length - 1
+            Historial_de_facturas.HistorialDeFacturasDG.Rows.Add()
+
+            Historial_de_facturas.HistorialDeFacturasDG.Rows(i).Cells(0).Value = Historial_de_facturas.facturas(i).Item("facturaId") 'id
+            Historial_de_facturas.HistorialDeFacturasDG.Rows(i).Cells(1).Value = Math.Round(CDbl(Historial_de_facturas.facturas(i).Item("monto")), 2).ToString("C2") 'costo
+            Historial_de_facturas.HistorialDeFacturasDG.Rows(i).Cells(2).Value = Historial_de_facturas.facturas(i).Item("fecha") 'fecha
+        Next
+
         With Historial_de_facturas
             .TopLevel = False
             PanelFormularios.Controls.Add(Historial_de_facturas)
@@ -65,9 +74,15 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'AbrirFormenPanel(Of Añadir_fondos)()
-        With AñadirPlatoForm
+        Dim saldo As Double = MySql.GetSaldo(loginForm.usuario)
+
+        AñadirFondosForm.saldo = Math.Round(CDbl(saldo), 2)
+        LblSaldo.Text = Math.Round(CDbl(saldo), 2).ToString("C2")
+        AñadirFondosForm.LblSaldoActual.Text = "Saldo Actual: " + Math.Round(CDbl(saldo), 2).ToString("C2")
+
+        With AñadirFondosForm
             .TopLevel = False
-            PanelFormularios.Controls.Add(AñadirPlatoForm)
+            PanelFormularios.Controls.Add(AñadirFondosForm)
             .BringToFront()
             .Show()
         End With

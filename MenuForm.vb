@@ -35,17 +35,7 @@
             End Try
         End If
 
-
-        If platos.GetLength(1) - 1 = plato And plato <> -1 And platos.GetLength(0) <> 1 Then
-            BtnSiguientePlato.Visible = False
-            BtnPlatoAnterior.Visible = True
-        ElseIf 0 = plato Then
-            BtnPlatoAnterior.Visible = False
-            BtnSiguientePlato.Visible = True
-        Else
-            BtnPlatoAnterior.Visible = False
-            BtnSiguientePlato.Visible = False
-        End If
+        HandleButtons(plato)
     End Sub
     Private Sub BtnSiguientePlato_Click(sender As Object, e As EventArgs) Handles BtnSiguientePlato.Click
         If platos.GetLength(1) - 1 > plato Then
@@ -60,17 +50,10 @@
 
         End If
 
-        If platos.GetLength(1) - 1 = plato And plato <> -1 And platos.GetLength(0) <> 1 Then
-            BtnSiguientePlato.Visible = False
-            BtnPlatoAnterior.Visible = True
-        ElseIf 0 = plato Then
-            BtnPlatoAnterior.Visible = False
-            BtnSiguientePlato.Visible = True
-        Else
-            BtnPlatoAnterior.Visible = False
-            BtnSiguientePlato.Visible = False
-        End If
+
+        HandleButtons(plato)
     End Sub
+
 
     Private Sub BtnPlatoAnterior_Click(sender As Object, e As EventArgs) Handles BtnPlatoAnterior.Click
         If 0 < plato Then
@@ -87,17 +70,7 @@
             plato = -1
         End If
 
-
-        If platos.GetLength(1) - 1 = plato And plato <> -1 And platos.GetLength(0) <> 1 Then
-            BtnSiguientePlato.Visible = False
-            BtnPlatoAnterior.Visible = True
-        ElseIf 0 = plato Then
-            BtnPlatoAnterior.Visible = False
-            BtnSiguientePlato.Visible = True
-        Else
-            BtnPlatoAnterior.Visible = False
-            BtnSiguientePlato.Visible = False
-        End If
+        HandleButtons(plato)
 
     End Sub
 
@@ -131,19 +104,25 @@
                 ImagenPlato.Hide()
             End If
 
-            If platos.GetLength(1) - 1 = plato And plato <> -1 And platos.GetLength(0) <> 1 Then
-                BtnSiguientePlato.Visible = False
-                BtnPlatoAnterior.Visible = True
-            ElseIf 0 = plato Then
-                BtnPlatoAnterior.Visible = False
-                BtnSiguientePlato.Visible = True
-            Else
-                BtnPlatoAnterior.Visible = False
-                BtnSiguientePlato.Visible = False
-            End If
+            HandleButtons(plato)
         End If
     End Sub
+    Private Sub HandleButtons(plato As Integer)
+        If platos.GetLength(1) <= 1 Then
+            BtnPlatoAnterior.Visible = False
+            BtnSiguientePlato.Visible = False
+        ElseIf platos.GetLength(1) - 1 = plato And plato <> -1 Then
+            BtnSiguientePlato.Visible = False
+            BtnPlatoAnterior.Visible = True
+        ElseIf 0 = plato Then
+            BtnPlatoAnterior.Visible = False
+            BtnSiguientePlato.Visible = True
+        Else
+            BtnPlatoAnterior.Visible = True
+            BtnSiguientePlato.Visible = True
+        End If
 
+    End Sub
     Private Sub BtnPrecioPlato_Click(sender As Object, e As EventArgs) Handles BtnPrecioPlato.Click
         'Me.Hide()
         'PantallaPrincipal.Show()

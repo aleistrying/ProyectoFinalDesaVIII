@@ -256,7 +256,6 @@ responsible_cafe cafeteria, order_amount monto, order_date fecha
 FROM pedidos_realizados
 WHERE order_code = {facturaId}"
         sqlDr = sqlCmd.ExecuteReader()
-        sqlDr.Read()
 
         If Not sqlDr.HasRows Then
             'MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
@@ -280,4 +279,58 @@ WHERE order_code = {facturaId}"
 
         Return factura
     End Function
+    Public Shared Function GetFacturas(user As Usuario)
+        sqlConn.Open()
+        sqlCmd.CommandText = $"SELECT COUNT(*)
+FROM pedidos_realizados
+WHERE client_id={user.GetId()}"
+        sqlDr = sqlCmd.ExecuteReader()
+        sqlDr.Read()
+
+        Dim length As Integer = sqlDr.GetValue(0)
+        sqlDr.Close()
+
+        sqlCmd.CommandText = $"SELECT client_name cliente, 
+order_code facturaId, description_order descripcion, order_status status, 
+responsible_cafe cafeteria, order_amount monto, order_date fecha
+FROM pedidos_realizados
+WHERE client_id={user.GetId()}"
+        sqlDr = sqlCmd.ExecuteReader()
+
+        If Not sqlDr.HasRows Then
+            'MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
+            Return vbNullString
+        End If
+        Dim facturas(length - 1) As Dictionary(Of String, String)
+        Dim factura As Dictionary(Of String, String)
+        Dim i = 0
+        While sqlDr.Read() = True
+            facturas(i) = New Dictionary(Of String, String) From {
+                {"cliente", sqlDr.GetValue(0)}, 'cliente
+                {"facturaId", sqlDr.GetValue(1)}, 'facturaId
+                {"descripcion", sqlDr.GetValue(2)}, 'descripcion
+                {"status", sqlDr.GetValue(3)}, 'status
+                {"cafeteria", sqlDr.GetValue(4)}, 'cafeteria
+                {"monto", sqlDr.GetValue(5)}, 'monto
+                {"fecha", sqlDr.GetValue(6)} 'fecha
+                }
+
+            i += 1
+        End While
+
+        sqlDr.Close()
+        sqlConn.Close()
+
+        Return facturas
+    End Function
+
+    Public Shared Function AgregarFondos(user As Usuario, monto As Double)
+        sqlCmd.CommandText = $"INSERT INTO recarga(idUser,montoRecargado) 
+VALUES({user.GetId()},{Math.Round(monto, 2)})"
+        sqlConn.Open()
+        Dim inserted As Integer = sqlCmd.ExecuteNonQuery()
+        sqlConn.Close()
+        Return inserted
+    End Function
+
 End Class

@@ -58,10 +58,20 @@ Public Class loginForm
         'rellenar la barra de navegacion
         PantallaPrincipal.LblNombreUsuario.Text = usuario.GetNombre()
         PantallaPrincipal.LblSaldo.Text = String.Format("{0:C2}", usuario.GetSaldo())
+
+        If usuario.GetTipoUsuario() = 2 Then
+            PantallaPrincipal.BtnAdmin.Visible = True
+            PantallaPrincipal.BtnEditarplatos.Visible = True
+            PantallaPrincipal.BtneditaUsuarios.Visible = True
+        Else
+            PantallaPrincipal.BtnAdmin.Visible = False
+            PantallaPrincipal.BtnEditarplatos.Visible = False
+            PantallaPrincipal.BtneditaUsuarios.Visible = False
+        End If
         Try
-            PantallaPrincipal.ImgUsuario.Load($"http://cafeteria.eastus2.cloudapp.azure.com/cdn/photo/perfil/{usuario.GetFoto()}")
-        Catch ex As Exception
-            MessageBox.Show("La imagen de perfil tuvo un error.", "Imagen Error")
+                PantallaPrincipal.ImgUsuario.Load($"http://cafeteria.eastus2.cloudapp.azure.com/cdn/photo/perfil/{usuario.GetFoto()}")
+            Catch ex As Exception
+                MessageBox.Show("La imagen de perfil tuvo un error.", "Imagen Error")
         End Try
 
         Me.Hide()
