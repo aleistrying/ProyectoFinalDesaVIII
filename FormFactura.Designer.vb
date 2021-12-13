@@ -37,6 +37,7 @@ Partial Class FormFactura
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LblTotal = New System.Windows.Forms.Label()
         Me.LblItem = New System.Windows.Forms.Label()
+        Me.LblFacturaId = New System.Windows.Forms.Label()
         CType(Me.GeneracionFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -77,7 +78,7 @@ Partial Class FormFactura
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(243, 99)
         Me.btnRegresar.TabIndex = 1
-        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.Text = "Ir a Menu"
         Me.btnRegresar.UseVisualStyleBackColor = True
         '
         'PictureBox1
@@ -94,7 +95,7 @@ Partial Class FormFactura
         '
         Me.LblCliente.AutoSize = True
         Me.LblCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.LblCliente.Location = New System.Drawing.Point(360, 194)
+        Me.LblCliente.Location = New System.Drawing.Point(353, 228)
         Me.LblCliente.Name = "LblCliente"
         Me.LblCliente.Size = New System.Drawing.Size(124, 37)
         Me.LblCliente.TabIndex = 3
@@ -104,7 +105,7 @@ Partial Class FormFactura
         '
         Me.LblFecha.AutoSize = True
         Me.LblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.LblFecha.Location = New System.Drawing.Point(361, 143)
+        Me.LblFecha.Location = New System.Drawing.Point(361, 173)
         Me.LblFecha.Name = "LblFecha"
         Me.LblFecha.Size = New System.Drawing.Size(92, 29)
         Me.LblFecha.TabIndex = 4
@@ -114,7 +115,7 @@ Partial Class FormFactura
         '
         Me.LblCafeteria.AutoSize = True
         Me.LblCafeteria.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.LblCafeteria.Location = New System.Drawing.Point(360, 253)
+        Me.LblCafeteria.Location = New System.Drawing.Point(360, 283)
         Me.LblCafeteria.Name = "LblCafeteria"
         Me.LblCafeteria.Size = New System.Drawing.Size(99, 32)
         Me.LblCafeteria.TabIndex = 5
@@ -159,11 +160,22 @@ Partial Class FormFactura
         Me.LblItem.TabIndex = 9
         Me.LblItem.Text = "Item"
         '
+        'LblFacturaId
+        '
+        Me.LblFacturaId.AutoSize = True
+        Me.LblFacturaId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.LblFacturaId.Location = New System.Drawing.Point(474, 110)
+        Me.LblFacturaId.Name = "LblFacturaId"
+        Me.LblFacturaId.Size = New System.Drawing.Size(48, 29)
+        Me.LblFacturaId.TabIndex = 10
+        Me.LblFacturaId.Text = "ID: "
+        '
         'FormFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1297, 680)
+        Me.Controls.Add(Me.LblFacturaId)
         Me.Controls.Add(Me.LblItem)
         Me.Controls.Add(Me.LblTotal)
         Me.Controls.Add(Me.Label5)
@@ -200,4 +212,5 @@ Partial Class FormFactura
     Friend WithEvents Label5 As Label
     Friend WithEvents LblTotal As Label
     Friend WithEvents LblItem As Label
+    Friend WithEvents LblFacturaId As Label
 End Class

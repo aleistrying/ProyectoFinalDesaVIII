@@ -181,7 +181,7 @@ tipousuario tu LEFT JOIN  subsidio_tipo_usuario stu ON stu.tipo_usuario  = tu.id
 WHERE tu.id={user.GetTipoUsuario()} 
 AND pc.idPlato = p.id 
 AND pc.idCafeteria={user.GetCafeteriaIdSeleccionada()} 
-AND pc.stock <> 0 
+AND pc.stock > 0 
 AND pc.enable = 1"
         sqlConn.Open()
         sqlDr = sqlCmd.ExecuteReader()
@@ -191,13 +191,13 @@ AND pc.enable = 1"
 
         Dim platos(5, rows - 1) As String
         sqlCmd.CommandText = $"
-SELECT p.id,p.nombre,p.descripcion,p.foto,ROUND((1-NVL(stu.porcentaje_subsidio,0)/100) * p.precio,2) precio, pc.stock
+SELECT p.id,NVL(p.nombre,'') nombre,NVL(p.descripcion,'') descripcion,p.foto,ROUND((1-NVL(stu.porcentaje_subsidio,0)/100) * p.precio,2) precio, pc.stock
 FROM platos_en_cafeteria pc,plato p,
 tipousuario tu LEFT JOIN  subsidio_tipo_usuario stu ON stu.tipo_usuario  = tu.id 
 WHERE tu.id={user.GetTipoUsuario()} 
 AND pc.idPlato = p.id 
 AND pc.idCafeteria={user.GetCafeteriaIdSeleccionada()} 
-AND pc.stock <> 0 
+AND pc.stock > 0 
 AND pc.enable = 1"
         sqlDr = sqlCmd.ExecuteReader()
         Dim i = 0
@@ -251,10 +251,10 @@ AND pc.enable = 1"
     Public Shared Function GetFactura(facturaId As String, user As Usuario)
         sqlConn.Open()
         sqlCmd.CommandText = $"SELECT client_name cliente, 
-order_code facturaId, description_order descripcion, order_status status, 
-responsible_cafe cafeteria, order_amount monto, order_date fecha
+order_code facturaId, NVL(description_order,'') descripcion, order_status status, 
+responsible_cafe cafeteria, NVL(order_amount,0) monto, order_date fecha
 FROM pedidos_realizados
-WHERE order_code = {facturaId}"
+WHERE order_code = '{facturaId}'"
         sqlDr = sqlCmd.ExecuteReader()
 
         If Not sqlDr.HasRows Then
@@ -291,8 +291,8 @@ WHERE client_id={user.GetId()}"
         sqlDr.Close()
 
         sqlCmd.CommandText = $"SELECT client_name cliente, 
-order_code facturaId, description_order descripcion, order_status status, 
-responsible_cafe cafeteria, order_amount monto, order_date fecha
+order_code facturaId, NVL(description_order,'')  descripcion, order_status status, 
+responsible_cafe cafeteria, NVL(order_amount,0) monto, order_date fecha
 FROM pedidos_realizados
 WHERE client_id={user.GetId()}"
         sqlDr = sqlCmd.ExecuteReader()

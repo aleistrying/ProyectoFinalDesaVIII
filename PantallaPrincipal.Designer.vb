@@ -27,7 +27,7 @@ Partial Class PantallaPrincipal
         Me.BtnEditarplatos = New System.Windows.Forms.Button()
         Me.Navegacion = New System.Windows.Forms.Panel()
         Me.BtnAdmin = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnAnadirFondos = New System.Windows.Forms.Button()
         Me.btnHistorial = New System.Windows.Forms.Button()
         Me.btnPerfil = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -86,7 +86,7 @@ Partial Class PantallaPrincipal
         Me.Navegacion.Controls.Add(Me.BtnAdmin)
         Me.Navegacion.Controls.Add(Me.btnCerrarsesion)
         Me.Navegacion.Controls.Add(Me.BtneditaUsuarios)
-        Me.Navegacion.Controls.Add(Me.Button2)
+        Me.Navegacion.Controls.Add(Me.BtnAnadirFondos)
         Me.Navegacion.Controls.Add(Me.btnHistorial)
         Me.Navegacion.Controls.Add(Me.BtnEditarplatos)
         Me.Navegacion.Controls.Add(Me.btnPerfil)
@@ -115,16 +115,16 @@ Partial Class PantallaPrincipal
         Me.BtnAdmin.Text = "Admin"
         Me.BtnAdmin.UseVisualStyleBackColor = False
         '
-        'Button2
+        'BtnAnadirFondos
         '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(433, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(128, 84)
-        Me.Button2.TabIndex = 31
-        Me.Button2.Text = "Añadir Fondos"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnAnadirFondos.FlatAppearance.BorderSize = 0
+        Me.BtnAnadirFondos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnadirFondos.Location = New System.Drawing.Point(433, 5)
+        Me.BtnAnadirFondos.Name = "BtnAnadirFondos"
+        Me.BtnAnadirFondos.Size = New System.Drawing.Size(128, 84)
+        Me.BtnAnadirFondos.TabIndex = 31
+        Me.BtnAnadirFondos.Text = "Añadir Fondos"
+        Me.BtnAnadirFondos.UseVisualStyleBackColor = True
         '
         'btnHistorial
         '
@@ -230,7 +230,7 @@ Partial Class PantallaPrincipal
     Friend WithEvents LblNombreUsuario As Label
     Friend WithEvents ImgUsuario As PictureBox
     Friend WithEvents btnPerfil As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnAnadirFondos As Button
     Friend WithEvents btnHistorial As Button
     Friend WithEvents BtnAdmin As Button
     Friend WithEvents PanelFormularios As Panel

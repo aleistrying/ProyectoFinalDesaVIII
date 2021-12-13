@@ -55,6 +55,7 @@
 
         Historial_de_facturas.facturas = MySql.GetFacturas(loginForm.usuario)
         Historial_de_facturas.HistorialDeFacturasDG.Rows.Clear()
+
         For i As Integer = 0 To Historial_de_facturas.facturas.Length - 1
             Historial_de_facturas.HistorialDeFacturasDG.Rows.Add()
 
@@ -72,7 +73,7 @@
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub BtnAnadirFondos_Click(sender As Object, e As EventArgs) Handles BtnAnadirFondos.Click
         'AbrirFormenPanel(Of Añadir_fondos)()
         Dim saldo As Double = MySql.GetSaldo(loginForm.usuario)
 

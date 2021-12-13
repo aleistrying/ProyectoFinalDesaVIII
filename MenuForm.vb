@@ -9,6 +9,9 @@
     'End Sub
 
     Private Sub MenuForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadMenu()
+    End Sub
+    Public Sub LoadMenu()
         cafeterias = MySql.ListaCafeterias()
         CafeteriaComboBox.Items.Clear()
         'cargamos el combo box con las opciones

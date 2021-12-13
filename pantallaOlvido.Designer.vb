@@ -33,6 +33,7 @@ Partial Class pantallaOlvido
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -164,11 +165,27 @@ Partial Class pantallaOlvido
         Me.TextBox2.Size = New System.Drawing.Size(323, 30)
         Me.TextBox2.TabIndex = 2
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Indigo
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(135, 89)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(145, 47)
+        Me.Button1.TabIndex = 21
+        Me.Button1.TabStop = False
+        Me.Button1.Text = "Enviar Codigo"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'pantallaOlvido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(427, 672)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label2)
@@ -199,4 +216,5 @@ Partial Class pantallaOlvido
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Button1 As Button
 End Class

@@ -76,6 +76,7 @@ Public Class loginForm
 
         Me.Hide()
         PantallaPrincipal.Show()
+        MenuForm.LoadMenu()
         With MenuForm
             .TopLevel = False
             PantallaPrincipal.PanelFormularios.Controls.Add(MenuForm)
