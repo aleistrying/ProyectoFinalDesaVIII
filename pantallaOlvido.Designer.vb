@@ -33,7 +33,7 @@ Partial Class pantallaOlvido
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnEnviarCodigo = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -57,6 +57,7 @@ Partial Class pantallaOlvido
         Me.lblPassword.Size = New System.Drawing.Size(78, 20)
         Me.lblPassword.TabIndex = 13
         Me.lblPassword.Text = "Password"
+        Me.lblPassword.Visible = False
         '
         'lblUsuario
         '
@@ -93,6 +94,7 @@ Partial Class pantallaOlvido
         Me.btnAcceptar.TabStop = False
         Me.btnAcceptar.Text = "Acceptar"
         Me.btnAcceptar.UseVisualStyleBackColor = False
+        Me.btnAcceptar.Visible = False
         '
         'btnVolver
         '
@@ -119,6 +121,7 @@ Partial Class pantallaOlvido
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(323, 30)
         Me.txtPassword.TabIndex = 3
+        Me.txtPassword.Visible = False
         '
         'TextBox1
         '
@@ -131,6 +134,7 @@ Partial Class pantallaOlvido
         Me.TextBox1.Size = New System.Drawing.Size(323, 30)
         Me.TextBox1.TabIndex = 4
         Me.TextBox1.TabStop = False
+        Me.TextBox1.Visible = False
         '
         'Label2
         '
@@ -142,6 +146,7 @@ Partial Class pantallaOlvido
         Me.Label2.Size = New System.Drawing.Size(151, 20)
         Me.Label2.TabIndex = 18
         Me.Label2.Text = "Confirmar Password"
+        Me.Label2.Visible = False
         '
         'Label3
         '
@@ -154,6 +159,7 @@ Partial Class pantallaOlvido
         Me.Label3.TabIndex = 20
         Me.Label3.Tag = "Usuario"
         Me.Label3.Text = "Codigo"
+        Me.Label3.Visible = False
         '
         'TextBox2
         '
@@ -164,28 +170,29 @@ Partial Class pantallaOlvido
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(323, 30)
         Me.TextBox2.TabIndex = 2
+        Me.TextBox2.Visible = False
         '
-        'Button1
+        'BtnEnviarCodigo
         '
-        Me.Button1.BackColor = System.Drawing.Color.Indigo
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(135, 89)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(145, 47)
-        Me.Button1.TabIndex = 21
-        Me.Button1.TabStop = False
-        Me.Button1.Text = "Enviar Codigo"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnEnviarCodigo.BackColor = System.Drawing.Color.Indigo
+        Me.BtnEnviarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEnviarCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BtnEnviarCodigo.ForeColor = System.Drawing.Color.White
+        Me.BtnEnviarCodigo.Location = New System.Drawing.Point(135, 315)
+        Me.BtnEnviarCodigo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BtnEnviarCodigo.Name = "BtnEnviarCodigo"
+        Me.BtnEnviarCodigo.Size = New System.Drawing.Size(145, 47)
+        Me.BtnEnviarCodigo.TabIndex = 21
+        Me.BtnEnviarCodigo.TabStop = False
+        Me.BtnEnviarCodigo.Text = "Enviar Codigo"
+        Me.BtnEnviarCodigo.UseVisualStyleBackColor = False
         '
         'pantallaOlvido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(427, 672)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnEnviarCodigo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label2)
@@ -199,6 +206,7 @@ Partial Class pantallaOlvido
         Me.Controls.Add(Me.btnAcceptar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "pantallaOlvido"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "pantallaOlvido"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -216,5 +224,5 @@ Partial Class pantallaOlvido
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnEnviarCodigo As Button
 End Class

@@ -60,11 +60,11 @@ Public Class loginForm
         PantallaPrincipal.LblSaldo.Text = String.Format("{0:C2}", usuario.GetSaldo())
 
         If usuario.GetTipoUsuario() = 2 Then
-            PantallaPrincipal.BtnAdmin.Visible = True
+            'PantallaPrincipal.BtnAdmin.Visible = True
             PantallaPrincipal.BtnEditarplatos.Visible = True
             PantallaPrincipal.BtneditaUsuarios.Visible = True
         Else
-            PantallaPrincipal.BtnAdmin.Visible = False
+            'PantallaPrincipal.BtnAdmin.Visible = False
             PantallaPrincipal.BtnEditarplatos.Visible = False
             PantallaPrincipal.BtneditaUsuarios.Visible = False
         End If

@@ -503,5 +503,14 @@ WHERE idCafeteria={idCafeteria} AND idPlato={idPlato}"
         Return updated
     End Function
 
+    Public Shared Function ActualizarClaveUsuario(email As String, newPass As String)
+        sqlCmd.CommandText = $"UPDATE user 
+SET pass='{newPass}'
+WHERE email='{email}'"
+        sqlConn.Open()
+        Dim updated As Integer = sqlCmd.ExecuteNonQuery()
+        sqlConn.Close()
+        Return updated
+    End Function
 
 End Class
