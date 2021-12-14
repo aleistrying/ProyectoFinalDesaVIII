@@ -14,7 +14,7 @@ Public Class MySql
     End Function
     Public Shared Function UsuarioLogin(email As String, password As String)
         sqlCmd = sqlConn.CreateCommand()
-        sqlCmd.CommandText = "SELECT COUNT(*) FROM user WHERE email='" + email + "' AND pass='" + password + "' AND login_enable=true"
+        sqlCmd.CommandText = "SELECT COUNT(*) FROM user WHERE email='" + email + "' AND pass='" + password + "' AND login_enable=1"
         sqlConn.Open()
         sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
@@ -29,7 +29,9 @@ Public Class MySql
         Dim currentDate As Date = Date.Now
 
         'no deberia fallar este query a menos que no haya limitaciones en nombre o apellido
-        sqlCmd.CommandText = "SELECT id,nombre,apellido,tipoUsuario,COALESCE(foto,''),COALESCE(sexo,''), COALESCE(default_cafeteria_id,0), get_saldoById(id) saldo FROM user WHERE email='" + email + "' AND login_enable=true"
+        sqlCmd.CommandText = "SELECT id,nombre,apellido,tipoUsuario,COALESCE(foto,''),COALESCE(sexo,''),
+COALESCE(default_cafeteria_id,0), get_saldoById(id) saldo
+FROM user WHERE email='" + email + "' AND login_enable=1"
         sqlConn.Open()
         sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
@@ -421,7 +423,7 @@ sqlDr.GetValue(7))
         sqlCmd.CommandText = $"
 SELECT COUNT(*) 
 FROM platosencafeteriaadminview
-WHERE id_cafeteria={idCafeteria}"
+WHERE id_cafeteria={idCafeteria} AND active = 1"
         sqlConn.Open()
         sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
@@ -433,7 +435,7 @@ WHERE id_cafeteria={idCafeteria}"
 SELECT id_plato id,NVL(nombre,'') nombre,NVL(descripcion,'') descripcion,
 precio_base precio, foto,stock,enabled
 FROM platosencafeteriaadminview
-WHERE id_cafeteria={idCafeteria}"
+WHERE id_cafeteria={idCafeteria} AND active = 1"
         sqlDr = sqlCmd.ExecuteReader()
         Dim i = 0
         While sqlDr.Read() = True
@@ -472,5 +474,34 @@ WHERE id={userId}"
         sqlConn.Close()
         Return updated
     End Function
+    Public Shared Function EditarPlato(plato() As String, idCafeteria As Integer)
+        sqlCmd.CommandText = $"UPDATE plato
+SET nombre='{plato(1)}',
+descripcion='{plato(2)}',
+precio={Math.Round(CDbl(plato(3)), 2)},
+foto='{plato(4)}'
+WHERE id={plato(0)}"
+        sqlConn.Open()
+        Dim updated1 As Integer = sqlCmd.ExecuteNonQuery()
+
+        sqlCmd.CommandText = $"UPDATE platos_en_cafeteria 
+SET stock={plato(5)},
+enable={If(CBool(plato(6)), 1, 0)}
+WHERE idPlato={plato(0)} AND idCafeteria ={idCafeteria}"
+
+        Dim updated2 As Integer = sqlCmd.ExecuteNonQuery()
+        sqlConn.Close()
+        Return updated1 + updated2
+    End Function
+    Public Shared Function BorrarPlato(idPlato As Integer, idCafeteria As Integer)
+        sqlCmd.CommandText = $"UPDATE platos_en_cafeteria 
+SET active = 0 
+WHERE idCafeteria={idCafeteria} AND idPlato={idPlato}"
+        sqlConn.Open()
+        Dim updated As Integer = sqlCmd.ExecuteNonQuery()
+        sqlConn.Close()
+        Return updated
+    End Function
+
 
 End Class

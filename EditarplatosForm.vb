@@ -19,7 +19,7 @@
         platos = MySql.GetPlatos(cafeterias(0, cafeteria))
 
         CafeteriaComboBox.Items.Clear()
-        For i As Integer = 0 To cafeterias.GetLength(0)
+        For i As Integer = 0 To cafeterias.GetLength(1) - 1
             CafeteriaComboBox.Items.Add(cafeterias(1, i))
         Next
 
@@ -27,9 +27,12 @@
     End Sub
     Public Sub RefreshDataGrid()
 
-        'llenar data grid
         DGEditarPlatos.Rows.Clear()
-        For i As Integer = 0 To platos.GetLength(0)
+        If platos.Length = 0 Then
+            Exit Sub
+        End If
+        'llenar data grid
+        For i As Integer = 0 To platos.GetLength(1) - 1
             DGEditarPlatos.Rows.Add()
             DGEditarPlatos.Rows(i).Cells(0).Value = platos(0, i) 'id
             DGEditarPlatos.Rows(i).Cells(1).Value = platos(1, i) 'nombre
@@ -51,10 +54,33 @@
     End Sub
     Private Sub DGEditarPlatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGEditarPlatos.CellContentClick
         Dim index As Integer = sender.CurrentCell.RowIndex
-        If sender.CurrentCell.Value.ToString Like "*Editar*" Then
+        If e.ColumnIndex = 7 Then 'sender.CurrentCell.Value.ToString() Like "*Editar*" Then
+            Dim plato() As String = {
+                DGEditarPlatos.Rows(index).Cells(0).Value,
+                DGEditarPlatos.Rows(index).Cells(1).Value,
+                DGEditarPlatos.Rows(index).Cells(2).Value,
+                DGEditarPlatos.Rows(index).Cells(3).Value,
+                DGEditarPlatos.Rows(index).Cells(4).Value,
+                DGEditarPlatos.Rows(index).Cells(5).Value,
+                DGEditarPlatos.Rows(index).Cells(6).Value}
+            Dim success As Integer = MySql.EditarPlato(plato, cafeterias(0, cafeteria))
+            If success <> 0 Then
+                MessageBox.Show("Se actualizo el plato con exito", "Success")
+            Else
+                MessageBox.Show("No se pudo actualizar al plato", "error")
+            End If
+            RefreshCafeterias()
+            RefreshDataGrid()
 
-        ElseIf sender.CurrentCell.Value.ToString Like "*Borrar*" Then
-
+        ElseIf e.ColumnIndex = 8 Then  ' sender.CurrentCell.Value.ToString() Like "*Borrar*" Then
+            Dim success As Integer = MySql.BorrarPlato(platos(0, index), cafeterias(0, cafeteria))
+            If success <> 0 Then
+                MessageBox.Show("Se borro el plato con exito", "Success")
+            Else
+                MessageBox.Show("No se pudo borrar el plato", "error")
+            End If
+            RefreshCafeterias()
+            RefreshDataGrid()
         End If
     End Sub
 End Class
