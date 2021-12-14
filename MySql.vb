@@ -15,14 +15,20 @@ Public Class MySql
     Public Shared Function UsuarioLogin(email As String, password As String)
         sqlCmd = sqlConn.CreateCommand()
         sqlCmd.CommandText = "SELECT COUNT(*) FROM user WHERE email='" + email + "' AND pass='" + password + "' AND login_enable=1"
-        sqlConn.Open()
-        sqlDr = sqlCmd.ExecuteReader()
-        sqlDr.Read()
-        Dim correctLogin As Integer = sqlDr.GetValue(0)
+        Try
+            sqlConn.Open()
+            sqlDr = sqlCmd.ExecuteReader()
+            sqlDr.Read()
+            Dim correctLogin As Integer = sqlDr.GetValue(0)
+            sqlDr.Close()
+            sqlConn.Close()
+            Return correctLogin
+        Catch ex As Exception
+            MessageBox.Show("No tienes conexion a la base de datos", "Error BD")
+            Return 0
+        End Try
 
-        sqlDr.Close()
-        sqlConn.Close()
-        Return correctLogin
+
     End Function
     Public Shared Function CrearSesion(email As String)
         Dim user As Usuario
@@ -125,6 +131,7 @@ FROM user WHERE email='" + email + "' AND login_enable=1"
         cmd.Append("1,null,1)")
 
         sqlCmd.CommandText = cmd.ToString()
+        sqlConn.Open()
         Dim rowsAffected As Integer = sqlCmd.ExecuteNonQuery()
         sqlConn.Close()
         Return rowsAffected
@@ -461,7 +468,12 @@ tipoUsuario={user.GetTipoUsuario()},
 login_enable={If(user.GetEnabled(), 1, 0)} 
 WHERE id={user.GetId()}"
         sqlConn.Open()
-        Dim updated As Integer = sqlCmd.ExecuteNonQuery()
+        Dim updated As Integer = 0
+        Try
+            updated = sqlCmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Error al insertar en la base de datos. Registro dup.", "ERROR")
+        End Try
         sqlConn.Close()
         Return updated
     End Function
