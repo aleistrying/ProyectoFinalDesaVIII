@@ -30,12 +30,14 @@ Partial Class EditarplatosForm
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Habilitado = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblCft = New System.Windows.Forms.Label()
+        Me.LblCafeteria = New System.Windows.Forms.Label()
         Me.CafeteriaComboBox = New System.Windows.Forms.ComboBox()
         CType(Me.DGEditarPlatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -55,26 +57,31 @@ Partial Class EditarplatosForm
         'DGEditarPlatos
         '
         Me.DGEditarPlatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGEditarPlatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DGEditarPlatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGEditarPlatos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Plato, Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column4, Me.Column5})
+        Me.DGEditarPlatos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Plato, Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.stock, Me.Habilitado, Me.Column4, Me.Column5})
         Me.DGEditarPlatos.Location = New System.Drawing.Point(23, 286)
         Me.DGEditarPlatos.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGEditarPlatos.Name = "DGEditarPlatos"
         Me.DGEditarPlatos.RowHeadersWidth = 62
-        Me.DGEditarPlatos.Size = New System.Drawing.Size(1266, 231)
+        Me.DGEditarPlatos.Size = New System.Drawing.Size(1266, 420)
         Me.DGEditarPlatos.TabIndex = 15
         '
         'Plato
         '
+        Me.Plato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Plato.HeaderText = "id plato"
         Me.Plato.MinimumWidth = 8
         Me.Plato.Name = "Plato"
+        Me.Plato.Width = 89
         '
         'Column1
         '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column1.HeaderText = "Nombre del plato"
         Me.Column1.MinimumWidth = 8
         Me.Column1.Name = "Column1"
+        Me.Column1.Width = 120
         '
         'Column2
         '
@@ -84,17 +91,41 @@ Partial Class EditarplatosForm
         '
         'Column3
         '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column3.HeaderText = "Precio"
         Me.Column3.MinimumWidth = 8
         Me.Column3.Name = "Column3"
         Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Column3.Width = 59
         '
         'Column6
         '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column6.HeaderText = "Imagen"
         Me.Column6.MinimumWidth = 8
         Me.Column6.Name = "Column6"
+        Me.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Column6.Width = 69
+        '
+        'stock
+        '
+        Me.stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.stock.HeaderText = "Stock"
+        Me.stock.MinimumWidth = 8
+        Me.stock.Name = "stock"
+        Me.stock.Width = 86
+        '
+        'Habilitado
+        '
+        Me.Habilitado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Habilitado.HeaderText = "Habilitado"
+        Me.Habilitado.MinimumWidth = 8
+        Me.Habilitado.Name = "Habilitado"
+        Me.Habilitado.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Habilitado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Habilitado.Width = 116
         '
         'Column4
         '
@@ -139,23 +170,23 @@ Partial Class EditarplatosForm
         Me.Panel1.Size = New System.Drawing.Size(1312, 154)
         Me.Panel1.TabIndex = 23
         '
-        'lblCft
+        'LblCafeteria
         '
-        Me.lblCft.AutoSize = True
-        Me.lblCft.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.lblCft.Location = New System.Drawing.Point(113, 217)
-        Me.lblCft.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblCft.Name = "lblCft"
-        Me.lblCft.Size = New System.Drawing.Size(319, 25)
-        Me.lblCft.TabIndex = 25
-        Me.lblCft.Text = "Selecciona la cafeteria a editar aquí"
-        Me.lblCft.Visible = False
+        Me.LblCafeteria.AutoSize = True
+        Me.LblCafeteria.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.LblCafeteria.Location = New System.Drawing.Point(16, 213)
+        Me.LblCafeteria.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblCafeteria.Name = "LblCafeteria"
+        Me.LblCafeteria.Size = New System.Drawing.Size(319, 25)
+        Me.LblCafeteria.TabIndex = 25
+        Me.LblCafeteria.Text = "Selecciona la cafeteria a editar aquí"
+        Me.LblCafeteria.Visible = False
         '
         'CafeteriaComboBox
         '
         Me.CafeteriaComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.CafeteriaComboBox.FormattingEnabled = True
-        Me.CafeteriaComboBox.Location = New System.Drawing.Point(120, 245)
+        Me.CafeteriaComboBox.Location = New System.Drawing.Point(23, 241)
         Me.CafeteriaComboBox.Name = "CafeteriaComboBox"
         Me.CafeteriaComboBox.Size = New System.Drawing.Size(358, 37)
         Me.CafeteriaComboBox.TabIndex = 24
@@ -167,7 +198,7 @@ Partial Class EditarplatosForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1312, 720)
-        Me.Controls.Add(Me.lblCft)
+        Me.Controls.Add(Me.LblCafeteria)
         Me.Controls.Add(Me.CafeteriaComboBox)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DGEditarPlatos)
@@ -187,13 +218,15 @@ Partial Class EditarplatosForm
     Friend WithEvents DGEditarPlatos As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents LblCafeteria As Label
+    Friend WithEvents CafeteriaComboBox As ComboBox
     Friend WithEvents Plato As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewImageColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents stock As DataGridViewTextBoxColumn
+    Friend WithEvents Habilitado As DataGridViewCheckBoxColumn
     Friend WithEvents Column4 As DataGridViewButtonColumn
     Friend WithEvents Column5 As DataGridViewButtonColumn
-    Friend WithEvents lblCft As Label
-    Friend WithEvents CafeteriaComboBox As ComboBox
 End Class

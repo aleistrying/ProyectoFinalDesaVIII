@@ -346,7 +346,7 @@ WHERE id = {user.GetId()}"
     Public Shared Function GetUsuarios()
         sqlConn.Open()
         sqlCmd.CommandText = $"SELECT COUNT(*)
-FROM user"
+FROM user WHERE active=1"
         sqlDr = sqlCmd.ExecuteReader()
         sqlDr.Read()
 
@@ -358,7 +358,7 @@ FROM user"
 COALESCE(foto,'') foto,COALESCE(sexo,'') sexo,
 COALESCE(default_cafeteria_id,0) default_cafeteria_id, 
 get_saldoById(id) saldo, login_enable
-FROM user "
+FROM user WHERE active = 1"
         sqlDr = sqlCmd.ExecuteReader()
 
         If Not sqlDr.HasRows Then
@@ -414,6 +414,63 @@ sqlDr.GetValue(7))
         sqlDr.Close()
         sqlConn.Close()
         Return tipoUsuarios
+    End Function
+    Public Shared Function GetPlatos(idCafeteria As Integer)
+        'Mi propia vista.
+
+        sqlCmd.CommandText = $"
+SELECT COUNT(*) 
+FROM platosencafeteriaadminview
+WHERE id_cafeteria={idCafeteria}"
+        sqlConn.Open()
+        sqlDr = sqlCmd.ExecuteReader()
+        sqlDr.Read()
+        Dim rows As Integer = sqlDr.GetValue(0)
+        sqlDr.Close()
+
+        Dim platos(6, rows - 1) As String
+        sqlCmd.CommandText = $"
+SELECT id_plato id,NVL(nombre,'') nombre,NVL(descripcion,'') descripcion,
+precio_base precio, foto,stock,enabled
+FROM platosencafeteriaadminview
+WHERE id_cafeteria={idCafeteria}"
+        sqlDr = sqlCmd.ExecuteReader()
+        Dim i = 0
+        While sqlDr.Read() = True
+            platos(0, i) = sqlDr.GetValue(0) 'id
+            platos(1, i) = sqlDr.GetString(1) 'nombre
+            platos(2, i) = sqlDr.GetString(2) 'desc
+            platos(3, i) = sqlDr.GetDouble(3) 'price
+            platos(4, i) = sqlDr.GetString(4) 'foto
+            platos(5, i) = sqlDr.GetValue(5) 'stock
+            platos(6, i) = sqlDr.GetBoolean(6) 'enabled
+            i += 1
+        End While
+        sqlDr.Close()
+        sqlConn.Close()
+        Return platos
+    End Function
+    Public Shared Function EditarUsuario(user As Usuario)
+        sqlCmd.CommandText = $"UPDATE user 
+SET nombre='{user.GetNombre()}',
+apellido='{user.GetApellido()}',
+email='{user.GetEmail()}',
+tipoUsuario={user.GetTipoUsuario()},
+login_enable={If(user.GetEnabled(), 1, 0)} 
+WHERE id={user.GetId()}"
+        sqlConn.Open()
+        Dim updated As Integer = sqlCmd.ExecuteNonQuery()
+        sqlConn.Close()
+        Return updated
+    End Function
+    Public Shared Function BorrarUsuario(userId As Integer)
+        sqlCmd.CommandText = $"UPDATE user 
+SET active = 0 
+WHERE id={userId}"
+        sqlConn.Open()
+        Dim updated As Integer = sqlCmd.ExecuteNonQuery()
+        sqlConn.Close()
+        Return updated
     End Function
 
 End Class

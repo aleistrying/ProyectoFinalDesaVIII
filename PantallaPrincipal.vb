@@ -17,6 +17,8 @@
     'End Sub
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles BtnEditarplatos.Click
         'AbrirFormenPanel(Of )EditarplatosForm()
+        EditarplatosForm.RefreshCafeterias()
+        EditarplatosForm.RefreshDataGrid()
         With EditarplatosForm
             .TopLevel = False
             PanelFormularios.Controls.Add(EditarplatosForm)

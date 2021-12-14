@@ -60,7 +60,7 @@ Partial Class EditarUsuariosForm
         Me.DGEditarUsuarios.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DGEditarUsuarios.Name = "DGEditarUsuarios"
         Me.DGEditarUsuarios.RowHeadersWidth = 62
-        Me.DGEditarUsuarios.Size = New System.Drawing.Size(1252, 231)
+        Me.DGEditarUsuarios.Size = New System.Drawing.Size(1252, 430)
         Me.DGEditarUsuarios.TabIndex = 19
         '
         'Nombre
