@@ -64,7 +64,7 @@ Partial Class PantallaPrincipal
         Me.BtneditaUsuarios.Name = "BtneditaUsuarios"
         Me.BtneditaUsuarios.Size = New System.Drawing.Size(112, 86)
         Me.BtneditaUsuarios.TabIndex = 12
-        Me.BtneditaUsuarios.Text = "Editar usuarios"
+        Me.BtneditaUsuarios.Text = "Editar Usuarios"
         Me.BtneditaUsuarios.UseVisualStyleBackColor = False
         '
         'BtnEditarplatos
@@ -77,7 +77,7 @@ Partial Class PantallaPrincipal
         Me.BtnEditarplatos.Name = "BtnEditarplatos"
         Me.BtnEditarplatos.Size = New System.Drawing.Size(146, 86)
         Me.BtnEditarplatos.TabIndex = 11
-        Me.BtnEditarplatos.Text = "Editar platos"
+        Me.BtnEditarplatos.Text = "Editar Platos"
         Me.BtnEditarplatos.UseVisualStyleBackColor = False
         '
         'Navegacion

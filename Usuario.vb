@@ -11,6 +11,7 @@ Public Class Usuario
     Private default_cafeteria_id As Integer
     Private cafeteria_id_seleccionada As Integer
     Private saldo As Double = 0.0D
+    Private enabled As Boolean
     Public Sub New(_id As Integer, _nombre As String,
                    _apellido As String, _email As String,
                    _tipoUsuario As Integer, _foto As String,
@@ -57,6 +58,9 @@ Public Class Usuario
     Public Function GetSaldo()
         Return saldo
     End Function
+    Public Function GetEnabled()
+        Return enabled
+    End Function
 
 
     Public Sub SetId(_id As Integer)
@@ -91,6 +95,9 @@ Public Class Usuario
     End Sub
     Public Sub SetSaldo(_saldo As Double)
         saldo = _saldo
+    End Sub
+    Public Sub SetEnabled(_enabled As Boolean)
+        enabled = _enabled
     End Sub
 
 End Class

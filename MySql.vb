@@ -332,5 +332,88 @@ VALUES({user.GetId()},{Math.Round(monto, 2)})"
         sqlConn.Close()
         Return inserted
     End Function
+    Public Shared Function ActualizarUsuario(user As Usuario)
+        sqlCmd.CommandText = $"UPDATE user
+SET nombre='{user.GetNombre()}',
+apellido='{user.GetApellido()}',
+foto='{user.GetFoto()}'
+WHERE id = {user.GetId()}"
+        sqlConn.Open()
+        Dim inserted As Integer = sqlCmd.ExecuteNonQuery()
+        sqlConn.Close()
+        Return inserted
+    End Function
+    Public Shared Function GetUsuarios()
+        sqlConn.Open()
+        sqlCmd.CommandText = $"SELECT COUNT(*)
+FROM user"
+        sqlDr = sqlCmd.ExecuteReader()
+        sqlDr.Read()
+
+        Dim length As Integer = sqlDr.GetValue(0)
+        sqlDr.Close()
+
+        sqlCmd.CommandText = $"SELECT 
+        id,nombre,apellido,email,tipoUsuario,
+COALESCE(foto,'') foto,COALESCE(sexo,'') sexo,
+COALESCE(default_cafeteria_id,0) default_cafeteria_id, 
+get_saldoById(id) saldo, login_enable
+FROM user "
+        sqlDr = sqlCmd.ExecuteReader()
+
+        If Not sqlDr.HasRows Then
+            'MessageBox.Show("Error Base de Datos", "No tiene conexion a la base de datos, o el usuario fue incorrecto, reintente mas tarde.")
+            Return vbNullString
+        End If
+        Dim usuarios(length - 1) As Usuario
+        Dim user As Usuario
+        Dim i = 0
+        While sqlDr.Read() = True
+            user = New Usuario(sqlDr.GetValue(0),
+sqlDr.GetString(1),
+sqlDr.GetString(2),
+sqlDr.GetString(3),
+sqlDr.GetValue(4),
+sqlDr.GetString(5),
+sqlDr.GetString(6),
+sqlDr.GetValue(7))
+            user.SetCafeteriaIdSeleccionada(sqlDr.GetValue(7))
+            user.SetSaldo(sqlDr.GetValue(8))
+            user.SetEnabled(sqlDr.GetBoolean(9))
+            usuarios(i) = user
+            i += 1
+        End While
+
+        sqlDr.Close()
+        sqlConn.Close()
+
+        Return usuarios
+    End Function
+
+    Public Shared Function GetTipoUsuarios()
+        sqlConn.Open()
+        sqlCmd.CommandText = $"SELECT COUNT(*) FROM tipousuario"
+        sqlDr = sqlCmd.ExecuteReader()
+        sqlDr.Read()
+
+        Dim len As Integer = sqlDr.GetValue(0)
+        sqlDr.Close()
+
+        sqlCmd.CommandText = $"SELECT id, tipo FROM tipousuario"
+        sqlDr = sqlCmd.ExecuteReader()
+        Dim tipoUsuarios(len - 1) As Dictionary(Of String, String)
+        Dim i = 0
+        While sqlDr.Read() = True
+
+            tipoUsuarios(i) = New Dictionary(Of String, String) From {
+                {"id", sqlDr.GetValue(0)},
+                {"descripcion", sqlDr.GetString(1)}}
+
+            i += 1
+        End While
+        sqlDr.Close()
+        sqlConn.Close()
+        Return tipoUsuarios
+    End Function
 
 End Class

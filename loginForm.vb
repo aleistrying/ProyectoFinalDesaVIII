@@ -56,7 +56,7 @@ Public Class loginForm
         '    'DGVCafeterias.Rows(I).Cells(2).Value = cafeterias(2, I)
         'Next
         'rellenar la barra de navegacion
-        PantallaPrincipal.LblNombreUsuario.Text = usuario.GetNombre()
+        PantallaPrincipal.LblNombreUsuario.Text = usuario.GetNombre() + " " + usuario.GetApellido().ToString().Substring(0, 1) + "."
         PantallaPrincipal.LblSaldo.Text = String.Format("{0:C2}", usuario.GetSaldo())
 
         If usuario.GetTipoUsuario() = 2 Then

@@ -39,19 +39,20 @@ Partial Class Historial_de_facturas
         Me.HistorialDeFacturasDG.AllowUserToAddRows = False
         Me.HistorialDeFacturasDG.AllowUserToDeleteRows = False
         Me.HistorialDeFacturasDG.AllowUserToOrderColumns = True
-        Me.HistorialDeFacturasDG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.HistorialDeFacturasDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.HistorialDeFacturasDG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.HistorialDeFacturasDG.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.HistorialDeFacturasDG.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.HistorialDeFacturasDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.HistorialDeFacturasDG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id_factura, Me.Costo, Me.Fecha, Me.Ver})
         Me.HistorialDeFacturasDG.GridColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.HistorialDeFacturasDG.Location = New System.Drawing.Point(321, 206)
+        Me.HistorialDeFacturasDG.Location = New System.Drawing.Point(140, 204)
         Me.HistorialDeFacturasDG.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.HistorialDeFacturasDG.Name = "HistorialDeFacturasDG"
         Me.HistorialDeFacturasDG.ReadOnly = True
         Me.HistorialDeFacturasDG.RowHeadersWidth = 62
         Me.HistorialDeFacturasDG.ShowEditingIcon = False
-        Me.HistorialDeFacturasDG.Size = New System.Drawing.Size(778, 257)
+        Me.HistorialDeFacturasDG.Size = New System.Drawing.Size(1032, 257)
         Me.HistorialDeFacturasDG.TabIndex = 0
         '
         'Id_factura
@@ -83,7 +84,6 @@ Partial Class Historial_de_facturas
         '
         'Ver
         '
-        Me.Ver.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.NullValue = "Ver"
@@ -94,7 +94,6 @@ Partial Class Historial_de_facturas
         Me.Ver.ReadOnly = True
         Me.Ver.Text = "Ver Factura"
         Me.Ver.UseColumnTextForButtonValue = True
-        Me.Ver.Width = 99
         '
         'Panel1
         '

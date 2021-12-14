@@ -25,7 +25,7 @@ Partial Class EditarplatosForm
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGEditarPlatos = New System.Windows.Forms.DataGridView()
         Me.Plato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -35,7 +35,9 @@ Partial Class EditarplatosForm
         Me.Column5 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.lblCft = New System.Windows.Forms.Label()
+        Me.CafeteriaComboBox = New System.Windows.Forms.ComboBox()
+        CType(Me.DGEditarPlatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,38 +50,37 @@ Partial Class EditarplatosForm
         Me.Button9.TabIndex = 14
         Me.Button9.Text = "Añadir platos"
         Me.Button9.UseVisualStyleBackColor = True
+        Me.Button9.Visible = False
         '
-        'DataGridView1
+        'DGEditarPlatos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Plato, Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column4, Me.Column5})
-        Me.DataGridView1.Location = New System.Drawing.Point(118, 286)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 62
-        Me.DataGridView1.Size = New System.Drawing.Size(1120, 231)
-        Me.DataGridView1.TabIndex = 15
+        Me.DGEditarPlatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGEditarPlatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGEditarPlatos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Plato, Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column4, Me.Column5})
+        Me.DGEditarPlatos.Location = New System.Drawing.Point(23, 286)
+        Me.DGEditarPlatos.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.DGEditarPlatos.Name = "DGEditarPlatos"
+        Me.DGEditarPlatos.RowHeadersWidth = 62
+        Me.DGEditarPlatos.Size = New System.Drawing.Size(1266, 231)
+        Me.DGEditarPlatos.TabIndex = 15
         '
         'Plato
         '
         Me.Plato.HeaderText = "id plato"
         Me.Plato.MinimumWidth = 8
         Me.Plato.Name = "Plato"
-        Me.Plato.Width = 150
         '
         'Column1
         '
         Me.Column1.HeaderText = "Nombre del plato"
         Me.Column1.MinimumWidth = 8
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 150
         '
         'Column2
         '
         Me.Column2.HeaderText = "Descripcion"
         Me.Column2.MinimumWidth = 8
         Me.Column2.Name = "Column2"
-        Me.Column2.Width = 150
         '
         'Column3
         '
@@ -88,14 +89,12 @@ Partial Class EditarplatosForm
         Me.Column3.Name = "Column3"
         Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Column3.Width = 150
         '
         'Column6
         '
         Me.Column6.HeaderText = "Imagen"
         Me.Column6.MinimumWidth = 8
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 150
         '
         'Column4
         '
@@ -105,7 +104,6 @@ Partial Class EditarplatosForm
         Me.Column4.HeaderText = "Editar"
         Me.Column4.MinimumWidth = 8
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 150
         '
         'Column5
         '
@@ -115,7 +113,6 @@ Partial Class EditarplatosForm
         Me.Column5.HeaderText = "Eliminar"
         Me.Column5.MinimumWidth = 8
         Me.Column5.Name = "Column5"
-        Me.Column5.Width = 150
         '
         'Label1
         '
@@ -142,6 +139,27 @@ Partial Class EditarplatosForm
         Me.Panel1.Size = New System.Drawing.Size(1312, 154)
         Me.Panel1.TabIndex = 23
         '
+        'lblCft
+        '
+        Me.lblCft.AutoSize = True
+        Me.lblCft.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lblCft.Location = New System.Drawing.Point(113, 217)
+        Me.lblCft.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCft.Name = "lblCft"
+        Me.lblCft.Size = New System.Drawing.Size(319, 25)
+        Me.lblCft.TabIndex = 25
+        Me.lblCft.Text = "Selecciona la cafeteria a editar aquí"
+        Me.lblCft.Visible = False
+        '
+        'CafeteriaComboBox
+        '
+        Me.CafeteriaComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.CafeteriaComboBox.FormattingEnabled = True
+        Me.CafeteriaComboBox.Location = New System.Drawing.Point(120, 245)
+        Me.CafeteriaComboBox.Name = "CafeteriaComboBox"
+        Me.CafeteriaComboBox.Size = New System.Drawing.Size(358, 37)
+        Me.CafeteriaComboBox.TabIndex = 24
+        '
         'EditarplatosForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -149,21 +167,24 @@ Partial Class EditarplatosForm
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1312, 720)
+        Me.Controls.Add(Me.lblCft)
+        Me.Controls.Add(Me.CafeteriaComboBox)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DGEditarPlatos)
         Me.Controls.Add(Me.Button9)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "EditarplatosForm"
         Me.Text = "Editar platos"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGEditarPlatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button9 As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGEditarPlatos As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Plato As DataGridViewTextBoxColumn
@@ -173,4 +194,6 @@ Partial Class EditarplatosForm
     Friend WithEvents Column6 As DataGridViewImageColumn
     Friend WithEvents Column4 As DataGridViewButtonColumn
     Friend WithEvents Column5 As DataGridViewButtonColumn
+    Friend WithEvents lblCft As Label
+    Friend WithEvents CafeteriaComboBox As ComboBox
 End Class

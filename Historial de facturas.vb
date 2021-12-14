@@ -21,4 +21,7 @@
         End If
     End Sub
 
+    Private Sub HistorialDeFacturasDG_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles HistorialDeFacturasDG.CellContentClick
+
+    End Sub
 End Class

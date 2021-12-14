@@ -26,10 +26,11 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles BtneditaUsuarios.Click
-        'AbrirFormenPanel(Of EditarUsuariosForm)()
+        'utilizar funcion de llenar datos en el data grid.
+        EditarUsuariosForm.RefreshDataGrid()
         With EditarUsuariosForm
             .TopLevel = False
-            PanelFormularios.Controls.Add(EditarplatosForm)
+            PanelFormularios.Controls.Add(EditarUsuariosForm)
             .BringToFront()
             .Show()
         End With
@@ -80,7 +81,6 @@
         AñadirFondosForm.saldo = Math.Round(CDbl(saldo), 2)
         LblSaldo.Text = Math.Round(CDbl(saldo), 2).ToString("C2")
         AñadirFondosForm.LblSaldoActual.Text = "Saldo Actual: " + Math.Round(CDbl(saldo), 2).ToString("C2")
-
         With AñadirFondosForm
             .TopLevel = False
             PanelFormularios.Controls.Add(AñadirFondosForm)
@@ -88,9 +88,30 @@
             .Show()
         End With
 
+
     End Sub
 
-    Private Sub PantallaPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'AbrirFormenPanel(Of MenuForm)()
+    Private Sub btnPerfil_Click(sender As Object, e As EventArgs) Handles btnPerfil.Click
+        'cargamos los datos de usuario.
+        Dim user As Usuario = MySql.CrearSesion(loginForm.usuario.GetEmail())
+        MiPerfilForm.ActualizarUsuario(user)
+        'MiPerfilForm.TxtCorreo.Text = user.GetEmail()
+        'MiPerfilForm.TxtApellido.Text = user.GetApellido()
+        'MiPerfilForm.TxtNombre.Text = user.GetNombre()
+        'Try
+        '    MiPerfilForm.PictureBox1.Load("http://cafeteria.eastus2.cloudapp.azure.com/cdn/photo//" + user.GetFoto())
+        'Catch ex As Exception
+        '    MessageBox.Show("No se pudo encontrar la imagen " + user.GetFoto(), "Error")
+        'End Try
+
+        'MiPerfilForm.ComboBoxFotoPerfil.SelectedItem = user.GetFoto()
+        With MiPerfilForm
+            .TopLevel = False
+            PanelFormularios.Controls.Add(MiPerfilForm)
+            .BringToFront()
+            .Show()
+        End With
+
+
     End Sub
 End Class
